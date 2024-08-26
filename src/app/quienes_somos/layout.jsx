@@ -1,6 +1,4 @@
 'use client'
-import Link from "next/link";
-import { carrousel01 } from "@/components/imagepath";
 import { useMediaQuery } from "@mui/material";
 import FooterDae from "@/components/FooterDae";
 import { FaArrowLeft } from "react-icons/fa";
@@ -12,7 +10,6 @@ export default function QuienesSomosLayout({ children }) {
   const pathname = usePathname()
 
   const isActive = (href) => {
-    console.log('HREF', pathname);
     return pathname === href ? 'quienes-somos-active' : 'nav-link-quienes-somos';
   };
   
@@ -31,7 +28,6 @@ export default function QuienesSomosLayout({ children }) {
 <div className="row flex-column d-flex align-items-center sailec mt--md-5 section-quienes-somos" /* style={{padding:0, margin: 0}} */>
         <div className="col-12 mt--md-5" style={{ padding: 0 }}>
           <div>
-            {/* <nav className="navbar navbar-expand-lg navbar-light "> */}
               {matches &&
                 <>
                   <button className='btn mt-4 mb-5'
@@ -49,50 +45,7 @@ export default function QuienesSomosLayout({ children }) {
                   </button>
                 </>
               }
-              {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-              </button> */}
-{/* 
-              <div  id="navbarSupportedContent">
-                <ul className="navbar-nav mr-auto">
-                  <li className="nav-item" >
-                    <Link 
-                    className={`nav-link nav-link-quienes-somos ${isActive('/quienes_somos')}`} 
-                    href="/quienes_somos">
-                      Quiénes somos
-                    </Link>
-                  </li>
-                  <li className="nav-item" >
-                    <Link 
-                    className={`nav-link nav-link-quienes-somos  ${isActive('/quienes_somos/intervenciones-clinicas')}`}  
-                    href="/quienes_somos/intervenciones-clinicas">
-                      Intervenciones clínicas
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link 
-                    className={`nav-link nav-link-quienes-somos ${isActive('/quienes_somos/intervenciones-grupales')}`}  
-                    href="/quienes_somos/intervenciones-grupales">
-                      Intervenciones grupales
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link 
-                    className={`nav-link nav-link-quienes-somos ${isActive('/quienes_somos/protocolo-de-accion-en-salud-mental')}`}  
-                    href="/quienes_somos/protocolo-de-accion-en-salud-mental">
-                      Protocolo de acción en salud mental
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link 
-                    className={`nav-link nav-link-quienes-somos ${isActive('/quienes_somos/intervencion-en-promocion-y-prevencion')}`}  
-                    href="/quienes_somos/intervencion-en-promocion-y-prevencion">
-                      Promoción y prevención
-                    </Link>
-                  </li>
-                </ul>
-              </div> */}
-            {/* </nav> */}
+             
             {children}
           </div>
         </div>

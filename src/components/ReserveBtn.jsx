@@ -16,23 +16,23 @@ const ReserveBtn = ({ text, bgColor, color }) => {
 
   return (
     <>
-      <Link href="/login#estudiantes" className="sailec-medium" >
-      <button
-        className='btn btn-rounded btn-reservar'
-        style={{
-          width: matches ? '130px' : '100px',
-          height: matches ? '56px' : '40px',
-          // margin: '16px 0',
-          backgroundColor: bgColor,
-          color: color,
-          fontSize: matches ? '16px' : '14px',
-          fontWeight: 700,
-        }}
-      // onClick={handleOpen}
-      >
-        <Today style={{ margin: matches ? '-2px 4px 0 0': '-3px 0 0', fontSize: '15px' }} />
-        {text}
-      </button>
+      <Link href="#" className="sailec-medium" style={{cursor: 'not-allowed'}}>
+        <button
+          className='btn btn-rounded btn-reservar'
+          style={{
+            width: matches ? '130px' : '100px',
+            height: matches ? '56px' : '40px',
+            backgroundColor: bgColor,
+            color: color,
+            fontSize: matches ? '16px' : '14px',
+            fontWeight: 700,
+            cursor: 'not-allowed'
+          }}
+        // onClick={handleOpen}
+        >
+          <Today style={{ margin: matches ? '-2px 4px 0 0' : '-3px 0 0', fontSize: '15px' }} />
+          {text}
+        </button>
       </Link>
       {/* <Modal open={open} handleClose={handleClose} /> */}
     </>

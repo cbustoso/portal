@@ -4,12 +4,8 @@ import "./globals.css";
 import "../assets/css/bootstrap.css"
 import Header from "@/components/Header";
 import Script from 'next/script'
-import TanstackProvider from "@/providers/TanstackProvider";
-import AuthProvider from "@/providers/AuthProvider";
 import { SectionProvider } from "@/context/SectionContext";
-import { getServerSession } from "next-auth";
 const inter = Inter({ subsets: ["latin"] });
-import { blogs } from "@/utils/blogs";
 // import Hotjar from '@hotjar/browser';
 
 const siteId = 3920275;
@@ -29,8 +25,6 @@ const roboto_init = Roboto({
 })
 
 export default async function RootLayout({ children }) {
-
-  const session = await getServerSession()
 
   return (
     <html lang="en">
@@ -57,16 +51,10 @@ export default async function RootLayout({ children }) {
         }}></Script> */}
       </head>
       <body className={`${roboto_init.variable}`}>
-        <AuthProvider session={session}>
-          <SectionProvider>
-            <TanstackProvider>
-              <Header />
-              {/* {blogs.length > 0 && <ImageSlider slides={blogs.slice(0, 5)} />} */}
-
-              {children}
-            </TanstackProvider>
-          </SectionProvider>
-        </AuthProvider>
+        <SectionProvider>
+          <Header />
+          {children}
+        </SectionProvider>
         <Script src="./bot.js" data-args="Salud mental, #FFFFFF, #AA3C80FF, ./bot_salud_mental.png" id="bot"></Script>
       </body>
     </html>

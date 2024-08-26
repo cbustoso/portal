@@ -95,7 +95,7 @@ export default function MaterialDescargable() {
       }}>
         <img
           alt="#"
-          src={saludMental03.src}
+          src="https://github.com/Niennis/imagesudp/blob/main/saludMental03.jpeg?raw=true"
           width={'100%'}
           style={{
             backgroundPosition: 'center'
@@ -153,23 +153,8 @@ export default function MaterialDescargable() {
                       </AccordionDetails>
                       <AccordionActions sx={{ bgcolor: '#E6E9EC' }}>
                         <Button>
-                          <a href={`/downloads/${item.url}`} download={item.url}>
-                            <button
-                              className='btn btn-0'
-                              style={{
-                                backgroundColor: "#3886FF",
-                                color: '#FFF',
-                                height: '48px',
-                                width: '200px',
-                                padding: '4px 24px',
-                                margin: '8px',
-                                borderRadius: '100px',
-                                fontSize: '16px',
-                                fontWeight: 600,
-                                border: '2px solid #A5C8FF'
-                              }}>
-                              Descargar <FaDownload />
-                            </button>
+                          <a href={`/downloads/${item.url}`} download={item.url} className='material-descargable-btn'>
+                            Descargar <FaDownload />
                           </a>
                         </Button>
                       </AccordionActions>
@@ -196,23 +181,8 @@ export default function MaterialDescargable() {
                       </AccordionDetails>
                       <AccordionActions sx={{ bgcolor: '#E6E9EC' }}>
                         <Button>
-                          <a href={`/downloads/${item.url}`} download={item.url}>
-                            <button
-                              className='btn btn-0'
-                              style={{
-                                backgroundColor: "#3886FF",
-                                color: '#FFF',
-                                height: '48px',
-                                width: '200px',
-                                padding: '4px 24px',
-                                margin: '8px',
-                                borderRadius: '100px',
-                                fontSize: '16px',
-                                fontWeight: 600,
-                                border: '2px solid #A5C8FF'
-                              }}>
-                              Descargar <FaDownload />
-                            </button>
+                          <a href={`/downloads/${item.url}`} download={item.url} className='material-descargable-btn'>
+                            Descargar <FaDownload />
                           </a>
                         </Button>
                       </AccordionActions>

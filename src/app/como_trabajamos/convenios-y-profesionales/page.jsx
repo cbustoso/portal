@@ -90,10 +90,10 @@ const ConveniosYProfesionales = () => {
                       Hernán Fuenzalida. Orientació  Psicoanalítica. Atención online. Consulta particular. Valor: desde $17.000. Correo de contacto: <a href="">hernanfuenzac@gmail.com</a>
                     </li>
                     <li>
-                      Andrés Vásquez. Orientación Cognitivo Conductual. Atención Online. Consulta Fonasa (en tramite), Particular e Isapres. Correo de contacto <a href="">ndrsvsqz@gmail.com</a>
+                      Andrés Vásquez. Orientación Cognitivo Conductual. Atención Online. Consulta Fonasa (en tramite), Particular e Isapres. Correo de contacto: <a href="">andrsvsqz@gmail.com</a>
                     </li>
                     <li>
-                      Karina Garrido. Terapeuta Ocupacional Presencial. Consulta Particular. $15.000. TOMA DE TEST ADOS-2 (TEA) ADULTOS $70.000 <a href="">to.karinagarrido@gmail.com</a>
+                      Karina Garrido. Terapeuta Ocupacional Presencial. Consulta Particular. $15.000. TOMA DE TEST ADOS-2 (TEA) ADULTOS $70.000. Correo de contacto: <a href="">karinagarrido@gmail.com</a>
                     </li>
                   </ul>
                 </div>

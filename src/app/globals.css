@@ -37,6 +37,7 @@ body {
   height: 100%;
   padding: 0 !important;
 }
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -13430,11 +13431,11 @@ td:has(div.text-end) {
 
 /* QUIENES SOMOS */
 
-.navbarSupportedContent{
+.navbarSupportedContent {
   height: 64px;
 }
 
-#navbarSupportedContent li{
+#navbarSupportedContent li {
   margin: 0;
 }
 
@@ -13447,7 +13448,7 @@ td:has(div.text-end) {
   font-size: 14px;
 }
 
-.nav-link-submenu{
+.nav-link-submenu {
   color: #000;
   font-size: 20px;
   line-height: 28px;
@@ -13465,7 +13466,7 @@ td:has(div.text-end) {
   /* // textWrap: 'balance', */
 }
 
-.section-quienes-somos p{
+.section-quienes-somos p {
   text-wrap: pretty;
 }
 
@@ -13482,6 +13483,7 @@ td:has(div.text-end) {
 .quienes-somos-active {
   border-bottom: 2px solid #3886ff;
 }
+
 /* QUIENES SOMOS */
 
 
@@ -13580,4 +13582,27 @@ td:has(div.text-end) {
   width: 1.5rem;
   text-align: center;
   display: inline-block;
+}
+
+.material-descargable-btn {
+  background-color: #3886FF;
+  color: #FFF;
+  height: 48px;
+  width: 200px;
+  padding: 4px 24px;
+  margin: 8px;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid #A5C8FF;
+  align-content: center;
+}
+
+.material-descargable-btn:hover,
+.material-descargable-btn:focus,
+.material-descargable-btn.active,
+.material-descargable-btn:active {
+  background-color: #1976d2;
+  border: 1px solid #1976d2;
+  color: #ffffff
 }

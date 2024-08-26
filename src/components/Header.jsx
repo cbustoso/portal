@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { useSection } from "@/context/SectionContext";
 import ReserveBtn from "./ReserveBtn";
-import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { logo } from "./imagepath";
 import { useMediaQuery } from "@mui/material";
@@ -45,11 +44,10 @@ const Header = () => {
   const [anchorElUser, setAnchorElUser] = useState(null);
   const { activeSection, setActiveSection } = useSection();
   const open = Boolean(anchorEl);
-  const { data: session } = useSession()
   const EVENTS = 0;
   const pages = EVENTS !== 0 ? pagesWithEvents : pagesWithoutEvents
   const matches = useMediaQuery('(min-width:600px)');
-  const [style, setStyle] = useState({ width: 'min-content'});
+  const [style, setStyle] = useState({ width: 'min-content' });
 
   const isSmallDevice = useMediaQuery(
     "only screen and (max-width : 640px)"
@@ -70,15 +68,15 @@ const Header = () => {
       if (width < 900) {
         setStyle({ width: '6px' });
       } else if (width < 1450) {
-        setStyle({ width: 'min-content'});
+        setStyle({ width: 'min-content' });
       } else {
-        setStyle({ width: 'fit-content'});
+        setStyle({ width: 'fit-content' });
       }
     };
 
     if (typeof window !== 'undefined') {
       window.addEventListener('resize', handleResize);
-      handleResize(); 
+      handleResize();
     }
 
     // Limpia el event listener cuando el componente se desmonte
@@ -188,10 +186,8 @@ const Header = () => {
                 ))
               }
               <MenuItem onClick={handleOpenUserMenu}>
-                <Typography textAlign="center" className="sailec">
-                  <p style={{ color: 'black', fontFamily: 'sailec' }}>
-                    CÓMO TRABAJAMOS <FaChevronDown />
-                  </p>
+                <Typography textAlign="center" className="sailec" sx={{ color: '#000000', fontFamily: 'sailec' }}>
+                  CÓMO TRABAJAMOS <FaChevronDown />
                 </Typography>
               </MenuItem>
 
@@ -307,41 +303,14 @@ const Header = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            {/* <Tooltip title="Open"> */}
-            {/* <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}> */}
-            {
-              !session
-                ? <>
-                  <ReserveBtn text={'Reservar'} bgColor={'#FABB00'} color={'#000'} />
-                  <Link href="/login#profesionales" style={{ textDecoration: 'none' }}>
-                    <FaUserCircle style={{ fontSize: matches ? '50px' : '38px', color: '#000', border: '1px solid #ff5253', borderRadius: '50px', padding: '5px', marginLeft: '5px', background: '#b82925', color: '#fff', fontFamily: 'sailec' }} />
-                  </Link>
-                </>
-                : session.user.picture ?
-                  <button className="btn">
-                    <Link href="/citas" style={{ textDecoration: 'none' }}>
-                      <img
-                        className="avatar-img rounded-circle"
-                        src={session.user.picture}
-                        alt="avatar"
-                        height={40}
-                      />
-                    </Link>
-                    {/* {session.user.name} */}
-                  </button>
-                  :
-                  <Link href="/citas">
-                    <FaUserCircle style={{ height: '40px' }} />
-                  </Link>
-            }
-
-            {/* </IconButton> */}
-            {/* </Tooltip> */}
-
+            <ReserveBtn text={'Reservar'} bgColor={'#FABB00'} color={'#000'} />
+            <Link href="#" style={{ textDecoration: 'none', cursor: 'not-allowed' }} >
+              <FaUserCircle style={{ fontSize: matches ? '50px' : '38px', color: '#000', border: '1px solid #ff5253', borderRadius: '50px', padding: '5px', marginLeft: '5px', background: '#b82925', color: '#fff', fontFamily: 'sailec' }} />
+            </Link>
           </Box>
         </Toolbar>
       </Container>
-    </AppBar>
+    </AppBar >
   );
 };
 

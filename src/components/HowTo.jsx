@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
@@ -17,7 +16,7 @@ const lightTheme = createTheme({ palette: { mode: 'light' } });
 export default function Elevation({ matches }) {
   return (
     <>
-      <Grid spacing={2} sx={{ placeContent: 'center', margin: matches ? '' : '10px 0' }}>
+      <Grid container spacing={2} sx={{ placeContent: 'center', margin: matches ? '' : '10px 0' }}>
         {[lightTheme].map((theme, index) => (
           <Grid item xs={6} key={index} >
             <ThemeProvider theme={theme}>
@@ -41,8 +40,6 @@ export default function Elevation({ matches }) {
                     { elevation: 4, title: 'Debes confirmar la cita' },
                     { elevation: 6, title: 'Luego de la entrevista, el profesional determinará qué dispositivo es el que calza mejor con tus necesidades y agendará tus siguientes citas' }
                   ].map((item) => (
-                    <>
-
                       <Item key={item.elevation} item={item.elevation}
                         sx={{
                           height: 'fit-content',
@@ -60,7 +57,6 @@ export default function Elevation({ matches }) {
                         </li>
 
                       </Item>
-                    </>
                   ))}
                 </ol>
 

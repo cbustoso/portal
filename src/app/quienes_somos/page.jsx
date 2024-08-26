@@ -1,5 +1,5 @@
 'use client'
-import { profesional01, map } from "@/components/imagepath";
+import { map } from "@/components/imagepath";
 import { useMediaQuery } from "@mui/material";
 import { Card, CardMedia, Typography } from "@mui/material";
 import { } from "@/components/imagepath";
@@ -185,7 +185,6 @@ export default function QuienesSomos() {
           </div>
           <div className="row" style={{ margin: '0 10px' }} >
             <div className="card-body flex-column d-flex align-items-center">
-              {console.log('matches', matches)}
               {
                 matches
                   ? <h2 style={{ fontWeight: 700, fontSize: '32px', lineHeight: '40px', marginTop: '20px' }} className="sailec">¿Dónde se encuentra el <strong>DSME?</strong></h2>
