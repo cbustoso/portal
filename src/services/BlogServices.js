@@ -1,4 +1,4 @@
-export const fetchBlogs = async () => {
+/* export const fetchBlogs = async () => {
   const BLOGS_API = 'https://us-central1-mkt-003001-00813.cloudfunctions.net/ZRZ-showBlogList'
   try {
     const data = await fetch(BLOGS_API, {
@@ -114,3 +114,4 @@ export const changeStatus = async (id, status) => {
   }
 }
 
+ */

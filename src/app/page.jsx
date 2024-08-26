@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import { useQuery } from '@tanstack/react-query';
 import { useSection } from "@/context/SectionContext";
 
-import { fetchBlogs } from '../services/BlogServices';
+// import { fetchBlogs } from '../services/BlogServices';
 import ImageSlider from '../components/ImageSlider';
 import TestSlider from '../components/TestSlider';
 import Events from '../components/Events';
