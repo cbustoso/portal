@@ -117,7 +117,15 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="fixed" style={{ background: 'white', color: 'black', margin: 0, height: matches ? '112px' : '98px', justifyContent: matches ? 'center' : 'flex-end' }}>
+    <AppBar position="fixed"
+      style={{
+        background: 'white',
+        color: 'black',
+        margin: 0,
+        height: matches ? '112px' : '98px',
+        justifyContent: matches ? 'center' : 'flex-end'
+      }}
+    >
       <Container maxWidth="false" style={{ background: 'white', color: 'black' }}>
         <Toolbar disableGutters>
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
@@ -302,12 +310,12 @@ const Header = () => {
             </Box>
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          {/* <Box sx={{ flexGrow: 0 }}>
             <ReserveBtn text={'Reservar'} bgColor={'#FABB00'} color={'#000'} />
             <Link href="#" style={{ textDecoration: 'none', cursor: 'not-allowed' }} >
               <FaUserCircle style={{ fontSize: matches ? '50px' : '38px', color: '#000', border: '1px solid #ff5253', borderRadius: '50px', padding: '5px', marginLeft: '5px', background: '#b82925', color: '#fff', fontFamily: 'sailec' }} />
             </Link>
-          </Box>
+          </Box> */}
         </Toolbar>
       </Container>
     </AppBar >

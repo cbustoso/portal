@@ -55,7 +55,7 @@ export default async function RootLayout({ children }) {
           <Header />
           {children}
         </SectionProvider>
-        <Script src="./bot.js" data-args="Salud mental, #FFFFFF, #AA3C80FF, ./bot_salud_mental.png" id="bot"></Script>
+        {/* <Script src="./bot.js" data-args="Salud mental, #FFFFFF, #AA3C80FF, ./bot_salud_mental.png" id="bot"></Script> */}
       </body>
     </html>
   );
