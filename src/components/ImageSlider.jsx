@@ -114,6 +114,7 @@ const ImageSlider = ({ innerRef }) => {
     // Función para manejar el cambio de slide
     const changeSlide = () => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
+      goToNext()
     };
 
     // Función para manejar el cambio de tamaño de la ventana
@@ -121,8 +122,8 @@ const ImageSlider = ({ innerRef }) => {
       const height = window.innerHeight;
       if (height < 800) {
         setIsShort(true);
-      // } else if (height < 1450) {
-      //   setIsShort(true);
+        // } else if (height < 1450) {
+        //   setIsShort(true);
       } else {
         setIsShort(false);
       }
@@ -253,7 +254,7 @@ const ImageSlider = ({ innerRef }) => {
   }
 
   return (
-    <div id="inicio" style={matches ? { ...sliderStyles, height: imgHeightDesktop } : sliderStyles} ref={innerRef}>
+    <div id="inicio" style={matches ? { ...sliderStyles, height: imgHeightDesktop } : {...sliderStyles, marginTop: '98px'}} ref={innerRef}>
       <div style={matches ? slideStyles : {}}></div>
 
       {matches ?
@@ -278,7 +279,9 @@ const ImageSlider = ({ innerRef }) => {
                     }}>
                     {slides[currentIndex].titulo}
                   </h2>
-                  <p style={{ color: '#FFF' }}> <MdOutlineChromeReaderMode style={{ marginTop: '-3px' }} /> {estimateReadingTime(slides[currentIndex].texto)} min. </p>
+                  <p style={{ color: '#FFF' }}>
+                    <MdOutlineChromeReaderMode style={{ marginTop: '-3px' }} /> {estimateReadingTime(slides[currentIndex].texto)} min.
+                  </p>
                 </div>
                 <Grid
                   container
@@ -414,12 +417,14 @@ const ImageSlider = ({ innerRef }) => {
                         margin: '8px'
                       }}> Ver más + </button>
                   </Link>
-                  <img
+                  <Image
                     src={slides[currentIndex].imagen}
                     alt=""
-                    width={'90%'}
+                    width={0}
                     height={250}
+                    sizes="100vw"
                     style={{
+                      width: '90%',
                       overflow: 'hidden',
                       margin: 'auto',
                       borderRadius: '8px',
