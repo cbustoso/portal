@@ -12,7 +12,6 @@ import Modal from '@mui/material/Modal';
 import { Fragment } from "react";
 import { useRouter } from 'next/navigation';
 
-
 const style = {
   position: 'absolute',
   top: '50%',
@@ -121,21 +120,30 @@ const resultados = [
     descripcion: `Tu puntuación indica un nivel bajo de ansiedad, sugiriendo que los síntomas ansiosos son mínimos o ausentes. En este nivel, la ansiedad probablemente no interfiere significativamente con tus actividades diarias.`
   },
   {
-    puntaje: [22, 35],
+    puntaje: [22, 42],
     titulo: 'Ansiedad moderada',
     descripcion: `Una puntuación en este rango muestra un nivel moderado de ansiedad. Tus síntomas ansiosos son más notorios y pueden empezar a interferir con algunas de tus actividades diarias. Sería beneficioso considerar una evaluación más detallada y posiblemente algunas intervenciones para manejar la ansiedad. Te invitamos a reservar hora con nuestros servicios de salud mental. `
   },
   {
-    puntaje: [36, 46],
+    puntaje: [33, 63],
     titulo: 'Ansiedad severa',
     descripcion: `Este nivel indica una ansiedad severa con síntomas intensos que probablemente interfieren de manera significativa con tu rutina diaria y tu bienestar. Es recomendable buscar ayuda profesional para evaluar y tratar adecuadamente la ansiedad. Te invitamos a reservar hora con nuestros servicios de salud mental, haciendo click en el enlace.`
   },
 ]
 
-const determinarDescripcion = (puntaje) => {
-  const categoria = resultados.find(resultado => puntaje >= resultado.puntaje[0] && puntaje <= resultado.puntaje[1]);
-  return categoria
-}
+const determinarDescripcionAsync = (puntaje) => {
+  return new Promise((resolve, reject) => {
+    try {
+      console.log('puntaje', puntaje);
+      const categoria = resultados.find(resultado => puntaje >= resultado.puntaje[0] && puntaje <= resultado.puntaje[1]);
+      console.log('categoria', categoria);
+      resolve(categoria); // Resolvemos la promesa con la categoría encontrada
+    } catch (error) {
+      console.error('Error en determinarDescripcionAsync:', error);
+      reject(error); // Rechazamos la promesa en caso de error
+    }
+  });
+};
 
 const ChildModal = ({ result }) => {
   const [open, setOpen] = useState(false);
@@ -172,23 +180,49 @@ const TestAnsiedad = () => {
   const [resultado, setResultado] = useState(null)
   const matches = useMediaQuery('(min-width:600px)');
   const [open, setOpen] = useState(false);
+  const [category, setCategory] = useState('')
   const router = useRouter()
 
-  const calculate = () => {
-    const data = watch()
+  /*   const calculate = () => {
+      const data = watch()
+  
+      let values = Object.values(data);
+      let filterValues = values.filter(elemento => !isNaN(Number(elemento)) && elemento !== null);
+      // Sumamos los valores
+      let sum = filterValues.reduce((accumulator, currentValue) => accumulator + parseInt(currentValue), 0);
+      return sum
+    } */
 
-    let values = Object.values(data);
-    let filterValues = values.filter(elemento => !isNaN(Number(elemento)) && elemento !== null);
-    // Sumamos los valores
-    let sum = filterValues.reduce((accumulator, currentValue) => accumulator + parseInt(currentValue), 0);
-    return sum
-  }
+  const calculateAsync = () => {
+    return new Promise((resolve, reject) => {
+      try {
+        const data = watch();
+        let values = Object.values(data);
+        let filterValues = values.filter(elemento => !isNaN(Number(elemento)) && elemento !== null);
+        // Sumamos los valores
+        let sum = filterValues.reduce((accumulator, currentValue) => accumulator + parseInt(currentValue), 0);
+        resolve(sum); // Resolvemos la promesa con el resultado
+      } catch (error) {
+        reject(error); // Rechazamos la promesa en caso de error
+      }
+    });
+  };
 
-  const handleOpen = () => {
+  const handleOpen = async () => {
     setOpen(true)
-    const result = calculate()
-    const response = determinarDescripcion(result)
-    setCategory(response)
+    try {
+      const result = await calculateAsync() // número
+      const categoryResult = await determinarDescripcionAsync(result)
+      console.log('trycatch', result, categoryResult)
+      setCategory(categoryResult)
+    } catch (error) {
+      console.log('errorsh')
+    }
+    
+
+    // const response = determinarDescripcion(result)
+    // setCategory(response)
+    // console.log('HOLI????', response)
   };
   const handleClose = () => setOpen(false);
 
@@ -217,7 +251,7 @@ const TestAnsiedad = () => {
       </div>
       }
       <div className="page-wrapper sailec" style={{ margin: 'auto' }}>
-        <div style={{marginTop: !matches && '47px'}}>
+        <div style={{ marginTop: !matches && '47px' }}>
           {/* Page Header */}
           {matches &&
             <button className='btn mt-4 mb-2'
@@ -238,12 +272,12 @@ const TestAnsiedad = () => {
           <div className="row">
             <div className="col-sm-12">
               <div className="card" style={{ border: 'none' }}>
-                <div className="card-body" style={{padding: matches ? '0 96px' : '32px'}}>
+                <div className="card-body" style={{ padding: matches ? '0 96px' : '32px' }}>
                   <form>
                     <div className="row d-flex flex-column align-items-center">
-                      <div className="col-12" style={{padding: 0}}>
+                      <div className="col-12" style={{ padding: 0 }}>
                         <div className="form-heading">
-                          <div className="card-body flex-row d-flex mt-4" style={{paddingLeft: 0}}>
+                          <div className="card-body flex-row d-flex mt-4" style={{ paddingLeft: 0 }}>
                             <h2
                               className={matches ? 'blog-title' : 'blog-title-sm'}>
                               Test de Ansiedad de Beck
@@ -473,7 +507,7 @@ const TestAnsiedad = () => {
                       </div>
                     </div>
                   </div>
-                  <ChildModal result={determinarDescripcion(resultado)} />
+                  <ChildModal result={category} />
                 </Box>
               </Modal>
             </div>
