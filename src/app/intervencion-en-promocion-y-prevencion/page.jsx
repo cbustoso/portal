@@ -29,7 +29,7 @@ const PromocionYPrevencion = () => {
                 </div>
               </div>
 
-              <img src="https://github.com/Niennis/imagesudp/blob/main/promocion_prevencion_texto.jpg?raw=true" alt="" width="100%" className="blog-img" />
+              <img src={`${process.env.NEXT_PUBLIC_BASE_IMG}promocion_prevencion_texto.jpg${process.env.NEXT_PUBLIC_KEY_IMG}`} alt="" width="100%" className="blog-img" />
             </div>
           </div>
         </div>

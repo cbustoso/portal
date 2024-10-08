@@ -49,7 +49,7 @@ export default function QuienesSomos() {
                     <CardMedia
                       component="img"
                       height="240"
-                      image={"https://github.com/Niennis/imagesudp/blob/main/profesional01.jpg?raw=true"}
+                      image={`${process.env.NEXT_PUBLIC_BASE_IMG}profesional01.jpg${process.env.NEXT_PUBLIC_KEY_IMG}`}
                       sx={{ borderRadius: '8px' }}
                     />
                   </Card>

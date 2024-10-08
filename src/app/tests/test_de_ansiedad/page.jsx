@@ -242,7 +242,7 @@ const TestAnsiedad = () => {
       }}>
         <img
           alt="#"
-          src={'https://github.com/Niennis/imagesudp/blob/main/home_ansiedad.jpg?raw=true'}
+          src={`${process.env.NEXT_PUBLIC_BASE_IMG}home_ansiedad.jpg${process.env.NEXT_PUBLIC_KEY_IMG}`}
           width={'100%'}
           style={{
             backgroundPosition: 'center'

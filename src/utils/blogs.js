@@ -42,7 +42,7 @@ export const blogs = [
 </ul>
 
   
-  <img src="https://github.com/Niennis/imagesudp/blob/main/ansiedad02.jpg?raw=true" alt="" width="100%" class="blog-img"/>
+  <img src="${process.env.NEXT_PUBLIC_BASE_IMG}ansiedad02.jpg${process.env.NEXT_PUBLIC_KEY_IMG}" alt="" width="100%" class="blog-img"/>
   
 <h2>Técnica 4: Exposición Gradual</h2>
 <p><strong>Exposición gradual: Enfrentando los miedos paso a paso.</strong></p>
@@ -74,7 +74,7 @@ export const blogs = [
 <li>Moreno, P., & Martín, J. C. (2004). <em>Dominar las crisis de ansiedad</em>. Desclée De Brouwer.</li>
 </ul>
 `,
-    imagen: "https://github.com/Niennis/imagesudp/blob/main/ansiedad01.jpg?raw=true",
+    imagen: `${process.env.NEXT_PUBLIC_BASE_IMG}ansiedad01.jpg${process.env.NEXT_PUBLIC_KEY_IMG}`,
     // video: 'https://www.youtube.com/embed/SsICv9BGemc?si=J6EOYsvxBxWB1cEw',
     downloads: [
       {
@@ -103,7 +103,7 @@ export const blogs = [
 </ol>
 <p>Identificar tus emociones y compartirlas es el primer paso para superar el aislamiento. No subestimes el poder de compartir cómo te sientes con alguien que pueda ofrecerte un apoyo genuino.</p>
 
-<img src="https://github.com/Niennis/imagesudp/blob/main/suicidio02.jpg?raw=true" alt="" width="100%" class="blog-img"/>
+<img src="${process.env.NEXT_PUBLIC_BASE_IMG}suicidio02.jpg${process.env.NEXT_PUBLIC_KEY_IMG}" alt="" width="100%" class="blog-img"/>
 
 <h2>Cómo ayudar</h2>
 <p>Si conoces a alguien que está pasando por un momento difícil y considera el suicidio, aquí tienes tres pasos concretos que puedes seguir para ofrecer tu ayuda:</p>
@@ -125,7 +125,7 @@ export const blogs = [
 <li>DSME. (2024). <em>Manual de prevención del suicidio</em>. Dirección de Asuntos Estudiantiles, Universidad Diego Portales.</li>
 </ul>
 `,
-    imagen: "https://github.com/Niennis/imagesudp/blob/main/suicidio01.jpg?raw=true",
+    imagen: `${process.env.NEXT_PUBLIC_BASE_IMG}suicidio01.jpg${process.env.NEXT_PUBLIC_KEY_IMG}`,
     video: '',
     // video: 'https://www.youtube.com/embed/tskcTOc7k58?si=oiNvP0nMIdI084cb',
     downloads: [
@@ -154,7 +154,7 @@ export const blogs = [
 <h2>Desarrolla Habilidades de Resistencia</h2>
 <p>Aprender a decir "no" es una habilidad crucial. En muchas situaciones, la presión social ejerce una gran influencia sobre el consumo de sustancias. Tener estrategias para manejar estas situaciones puede ser muy útil. Practica respuestas y mantén una postura firme sobre tus decisiones personales sin sentirte obligado a ceder.</p>
 
-<img src="https://github.com/Niennis/imagesudp/blob/main/drogas01.jpg?raw=true" alt="" width="100%" class="blog-img"/>
+<img src="${process.env.NEXT_PUBLIC_BASE_IMG}drogas01.jpg${process.env.NEXT_PUBLIC_KEY_IMG}" alt="" width="100%" class="blog-img"/>
 
 <h2>Apóyate en Redes Positivas</h2>
 <p>El apoyo social es un factor protector clave contra el consumo de sustancias. Rodéate de amigos y compañeros que respeten tus decisiones y compartan tus valores. Participa en actividades y clubs universitarios que promuevan un estilo de vida saludable. Según estudios, los estudiantes que tienen un sistema de apoyo sólido son menos propensos a participar en el consumo de drogas y alcohol.</p>
@@ -174,7 +174,7 @@ export const blogs = [
 <li>Liu, X.-Q., Guo, Y.-X., & Wang, X. (2023). Delivering substance use prevention interventions for adolescents in educational settings: A scoping review. World Journal of Psychiatry, 13(7), 409-422.</li>
 </ul>
     `,
-    imagen: "https://github.com/Niennis/imagesudp/blob/main/drogas02.jpg?raw=true",
+    imagen: `${process.env.NEXT_PUBLIC_BASE_IMG}drogas02.jpg${process.env.NEXT_PUBLIC_KEY_IMG}`,
     video: '',
     // video: 'https://www.youtube.com/embed/SsICv9BGemc?si=J6EOYsvxBxWB1cEw',
     downloads: [
@@ -190,6 +190,84 @@ export const blogs = [
       }
     ]
   },
+  {
+    id: '3',
+    titulo: '¿Primeros días en la U? Tips útiles',
+    bajada: `Descubre estrategias clave para enfrentar los primeros días en la universidad con confianza y éxito.`,
+    texto: `
+    <h2>Introducción:</h2>
+<p>Los primeros días en la universidad pueden ser emocionantes, pero también un tanto abrumadores. Comenzar esta nueva etapa de la vida implica muchos cambios: más responsabilidades, mayor autonomía, nuevas personas, y un entorno de aprendizaje diferente al que estabas acostumbrado. Sin embargo, hay estrategias clave que pueden ayudarte a hacer esta transición de manera más fluida y efectiva. A continuación, te compartimos algunos consejos prácticos basados en investigaciones recientes y testimonios de estudiantes que ya han pasado por esta experiencia.</p>
+
+<h2>1. Prepárate para una mayor demanda académica</h2>
+<p>Uno de los primeros desafíos que enfrentarás en la universidad es el aumento en la carga académica. A diferencia de la escuela secundaria, donde los profesores te guiaban de cerca, en la universidad se espera que seas mucho más independiente. Esto significa leer textos complejos, participar en discusiones en clase y completar tareas de manera más autónoma.</p>
+<p>Para lidiar con esta mayor demanda, es importante que comiences a organizar tu tiempo desde el principio. Planifica tu horario semanal incluyendo tiempo para asistir a clases, estudiar y cumplir con tus tareas. Esto no solo te ayudará a mantenerte al día, sino que también te permitirá adaptarte a la profundidad de los contenidos académicos.</p>
+
+<h2>2. Gestiona bien tu tiempo</h2>
+<p>La universidad ofrece más libertad, pero también requiere una mejor gestión del tiempo. Según los expertos, muchos estudiantes subestiman cuánto tiempo necesitarán para estudiar y completar tareas, lo que puede generar estrés y baja productividad.</p>
+<p>Una buena estrategia es crear una rutina diaria que te permita equilibrar tus responsabilidades académicas y tu tiempo personal. Usa una agenda o una aplicación móvil para anotar tus tareas, fechas de exámenes y otros compromisos importantes. Organiza bloques de estudio y respétalos, pero también deja tiempo para el ocio, la familia y los amigos.</p>
+
+<h2>3. Desarrolla nuevas estrategias de estudio</h2>
+<p>Una queja común entre los nuevos estudiantes universitarios es que las técnicas de estudio que funcionaban en la secundaria ya no son suficientes en la universidad. Esto es algo completamente normal. La profundidad de los contenidos exige que adoptes nuevas estrategias de estudio. Por ejemplo, en lugar de simplemente leer y memorizar, prueba hacer resúmenes, diagramas, mapas conceptuales o grabar las clases.</p>
+<p>Además, se recomienda estudiar en grupos cuando sea posible. Explicar los contenidos a otros compañeros te ayudará a comprender mejor los temas y a reforzar tu aprendizaje. No dudes en experimentar con diferentes métodos hasta que encuentres el que mejor funcione para ti.</p>
+
+<h2>4. Haz preguntas y pide ayuda cuando la necesites</h2>
+<p>En la universidad, pedir ayuda no solo es aceptable, sino que es una parte esencial del proceso de aprendizaje. Si no entiendes algo, acércate a tus profesores o compañeros. Las universidades suelen ofrecer una amplia gama de recursos, como tutorías, clases de refuerzo y materiales de apoyo en línea.</p>
+<p>No tengas miedo de acudir a tus profesores durante las horas de consulta, especialmente si sientes que te estás quedando atrás. También puedes preguntar a estudiantes de cursos superiores por consejos o recomendaciones para afrontar las materias.</p>
+
+<img src="${process.env.NEXT_PUBLIC_BASE_IMG}promocion_prevencion_cabecera.jpg${process.env.NEXT_PUBLIC_KEY_IMG}" alt="" width="100%" class="blog-img"/>
+
+<h2>5. Socializa y crea conexiones</h2>
+<p>Otro aspecto clave para adaptarte a la vida universitaria es la socialización. Hacer nuevos amigos y establecer relaciones con tus compañeros de clase puede ser una de las mejores formas de superar los primeros días. Según estudios recientes, la socialización ayuda a reducir el estrés, fomenta el trabajo en equipo y crea una red de apoyo que puede ser muy útil durante tu estancia en la universidad.</p>
+<p>Participar en actividades extracurriculares, unirte a clubes o asistir a eventos universitarios son excelentes maneras de conocer gente nueva y sentirte parte de la comunidad universitaria.</p>
+
+<h2>6. No te aísles: involucra a tu familia y amigos</h2>
+<p>Durante los primeros días, puede ser tentador enfocarte completamente en los estudios y dejar de lado las relaciones personales. Sin embargo, mantener el contacto con tu familia y amigos es fundamental para tu bienestar emocional. A pesar de que verás menos a tus seres queridos, intenta reservar tiempo para ellos, ya sea con una llamada telefónica o una visita ocasional.</p>
+<p>Recuerda que no tienes que enfrentar los desafíos universitarios solo. Tu familia y amigos pueden ofrecerte apoyo emocional y motivacional. De hecho, en muchas ocasiones, el apoyo familiar ha demostrado ser un factor clave en la perseverancia y éxito de los estudiantes.</p>
+
+<h2>7. Mantén una actitud positiva y sé perseverante</h2>
+<p>Los primeros días pueden ser duros, y no es raro sentir que las cosas no van según lo planeado. Es normal tener dificultades al adaptarse a un nuevo entorno, pero mantener una actitud positiva y perseverar ante los desafíos es fundamental. Si algo no va bien, no te desanimes. En cambio, piensa en lo que puedes mejorar y sigue adelante.</p>
+<p>Recuerda que equivocarse es parte del proceso de aprendizaje. Cada error te enseña algo nuevo, así que no te castigues demasiado si algo no sale como esperabas. Lo importante es seguir intentando y aprender de cada experiencia.</p>
+
+<h2>8. Aprovecha los recursos que ofrece la universidad</h2>
+<p>Muchas instituciones de educación superior ofrecen programas de nivelación y acompañamiento que pueden ayudarte a adaptarte más rápidamente a la vida universitaria. Desde talleres de hábitos de estudio hasta programas de mentoría, estos recursos están diseñados para facilitar tu transición a la universidad.</p>
+<p>Infórmate sobre las actividades de bienvenida que ofrece tu universidad, como las semanas de iniciación. Estas no solo te ayudarán a familiarizarte con el campus y los recursos, sino que también son una excelente oportunidad para conocer a tus profesores y compañeros.</p>
+
+<h2>9. Desarrolla tus habilidades blandas</h2>
+<p>Las habilidades blandas, como la comunicación efectiva, el trabajo en equipo y la gestión del tiempo, son igual de importantes que las habilidades académicas. Estas habilidades te ayudarán a manejar los desafíos del entorno universitario y te prepararán para el mundo laboral.</p>
+<p>Participar en proyectos de grupo, tomar la iniciativa en clase o asistir a seminarios y talleres son excelentes formas de desarrollar estas competencias. No solo mejorarás como estudiante, sino también como persona.</p>
+
+<h2>Conclusión</h2>
+<p>Los primeros días en la universidad pueden ser desafiantes, pero con una buena organización, actitud positiva y el apoyo de tus seres queridos y compañeros, podrás superar cualquier obstáculo. Recuerda que la universidad es una oportunidad para crecer tanto académica como personalmente. No te preocupes si las cosas no salen perfectas al principio; lo importante es aprender de cada experiencia y seguir adelante. ¡Ánimo y éxito en esta nueva etapa de tu vida!</p>
+
+`,
+    imagen: `primeros_dias_01.jpg`,
+    // imagen: `${process.env.NEXT_PUBLIC_BASE_IMG}iStock-1479946769_arriba.jpg${process.env.NEXT_PUBLIC_KEY_IMG}`,
+    
+    video: '',
+    // video: 'https://www.youtube.com/embed/SsICv9BGemc?si=J6EOYsvxBxWB1cEw',
+    downloads: [
+      {
+        titulo: 'Construye tu plan de adaptación universitario',
+        bajada: 'Desarrolla un plan integral para adaptarte a la vida universitaria, equilibrando lo académico, social y personal.',
+        url: 'construye_tu_plan_de_adaptacion.pdf'
+      },
+      {
+        titulo: 'Tips para mi adaptación universitaria',
+        bajada: 'Consejos prácticos para gestionar el tiempo, construir redes y cuidar tu bienestar en tu adaptación universitaria.',
+        url: 'tips_para_mi_adaptacion_universitaria.pdf'
+      }
+    ]
+  },
+
+]
+
+
+/* 
+
+
+
+
+  {
   {
     id: '3',
     titulo: 'Cómo hacer más en menos tiempo',
@@ -257,7 +335,7 @@ export const blogs = [
 <li>Moreno, P., & Martín, J. C. (2004). <em>Dominar las crisis de ansiedad</em>. Desclée De Brouwer.</li>
 </ul>
 `,
-    imagen: "https://github.com/Niennis/imagesudp/blob/main/estudio02.jpg?raw=true",
+    imagen: `${process.env.NEXT_PUBLIC_BASE_IMG}estudio02.jpg${process.env.NEXT_PUBLIC_KEY_IMG}`,
     video: '',
     // video: 'https://www.youtube.com/embed/SsICv9BGemc?si=J6EOYsvxBxWB1cEw',
     downloads: [
@@ -274,15 +352,6 @@ export const blogs = [
     ]
   },
 
-]
-
-
-/* 
-
-
-
-
-  {
     id: '5',
     titulo: 'Los Cimientos de la Terapia Cognitivo Conductual: Un Recorrido Histórico',
     bajada: `

@@ -18,7 +18,7 @@ export default function QuienesSomosLayout({ children }) {
       {matches && <div style={{
         height: '520px',
         overflow: 'hidden',
-        backgroundImage: `url(https://github.com/Niennis/imagesudp/blob/main/quienes_somos_cabecera.jpg?raw=true)`,
+        backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_IMG}quienes_somos_cabecera.jpg${process.env.NEXT_PUBLIC_KEY_IMG})`,
         backgroundPosition: 'center 80%',
         backgroundSize: 'cover'
       }}>

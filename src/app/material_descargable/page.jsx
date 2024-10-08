@@ -95,7 +95,7 @@ export default function MaterialDescargable() {
       }}>
         <img
           alt="#"
-          src="https://github.com/Niennis/imagesudp/blob/main/saludMental03.jpeg?raw=true"
+          src={`${process.env.NEXT_PUBLIC_BASE_IMG}saludMental03.jpeg${process.env.NEXT_PUBLIC_KEY_IMG}`}
           width={'100%'}
           style={{
             backgroundPosition: 'center'

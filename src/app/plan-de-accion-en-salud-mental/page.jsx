@@ -33,7 +33,7 @@ const ProtocoloAccionSaludMental = () => {
                   <Link href="/downloads/Plan_de_Salud_Mental_Universitaria_versión_informe.pdf" style={{ marginLeft: '0px', fontSize: '24px', lineHeight: '60px', fontWeight: 700, textWrap: 'balance' }}>
                     <FaArrowRightLong /> Ver protocolo aquí
                   </Link>
-                  <img src="https://github.com/Niennis/imagesudp/blob/main/plan_accion_texto.jpg?raw=true" alt="" width="100%" className="blog-img"/>
+                  <img src={`${process.env.NEXT_PUBLIC_BASE_IMG}plan_accion_texto.jpg${process.env.NEXT_PUBLIC_KEY_IMG}`} alt="" width="100%" className="blog-img"/>
                 </div>
               </div>
             </div>

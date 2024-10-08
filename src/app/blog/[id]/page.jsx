@@ -46,7 +46,7 @@ const card = (item) => (
       </Typography>
     </CardContent>
     <CardActions sx={{ backgroundColor: "#F1F1F1", justifyContent: 'flex-end' }}>
-      <a href={`/downloads/${item.url}`}  >
+      <a href={item.url} >
 
         <button
           className='btn btn-0'
@@ -90,11 +90,8 @@ const Blogdetails = ({ params }) => {
       <>
         <div className="main-wrapper main-blog sailec">
           {matches && <div style={{
-            // marginTop: '100px',
             height: '620px',
             overflow: 'hidden',
-            // display: 'flex',
-            // alignItems: 'center',
           }}>
             <img
               alt="#"
@@ -102,7 +99,6 @@ const Blogdetails = ({ params }) => {
               width={'100%'}
               style={{
                 backgroundPosition: 'center',
-                // height: 'fit-content'
               }}
             />
 
@@ -169,8 +165,8 @@ const Blogdetails = ({ params }) => {
                           </ul>
                         </div>
                       </div> */}
-                      {/* TEXTO */}
 
+                      {/* TEXTO */}
                       <div className="sailec col-lg-10 col-12" style={{ marginLeft: '0px' }}>
                         <div className={matches ? "blog-content" : "blog-content-sm"} dangerouslySetInnerHTML={blog && { __html: blog.texto }}>
                           {/* {blog.texto} */}

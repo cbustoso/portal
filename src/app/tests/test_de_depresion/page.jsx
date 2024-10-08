@@ -170,7 +170,7 @@ const TestDepresion = () => {
       }}>
         <img
           alt="#"
-          src={'https://github.com/Niennis/imagesudp/blob/main/saludMental01.jpeg?raw=true'}
+          src={`${process.env.NEXT_PUBLIC_BASE_IMG}saludMental01.jpeg${process.env.NEXT_PUBLIC_KEY_IMG}`}
           width={'100%'}
           style={{
             backgroundPosition: 'center'
