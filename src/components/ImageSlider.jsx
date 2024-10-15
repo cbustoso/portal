@@ -3,12 +3,10 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { CircleRounded } from "@mui/icons-material";
 import { Grid, Box, Typography, Tab, Tabs, useMediaQuery } from "@mui/material";
-import { banner04, banner05, banner06, banner07 } from "./imagepath";
 import Image from "next/image";
 import { MdOutlineChromeReaderMode } from "react-icons/md";
 import { blogs } from "@/utils/blogs";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { fontSize } from "@mui/system";
 
 const theme = createTheme({
   palette: {
@@ -57,7 +55,7 @@ const estimateReadingTime = text => {
   return Math.ceil(readingTimeMinutes); // Retorna el tiempo estimado de lectura en minutos, redondeado al entero superior
 }
 
-const CustomTabPanel = ({ children, value, index, isShort, ...other }) => {
+const CustomTabPanel = ({ children, value, index, isShort, isMediumDevice, ...other }) => {
   return (
     <div
       role="tabpanel"
@@ -72,8 +70,8 @@ const CustomTabPanel = ({ children, value, index, isShort, ...other }) => {
             className="sailec-medium"
             sx={{
               fontWeight: 400,
-              fontSize: isShort ? '18px' : '20px',
-              lineHeight: '28px',
+              fontSize: isMediumDevice ? '14px' : isShort ? '18px' : '20px',
+              lineHeight: isMediumDevice ? '20px': '28px',
               fontFamily: 'sailec'
             }}>{children}</Typography>
         </Box>
@@ -104,6 +102,20 @@ const ImageSlider = ({ innerRef }) => {
   const totalSlides = slides.length;
   const timeoutRef = useRef(null);
 
+  const isSmallDevice = useMediaQuery(
+    "only screen and (max-width : 640px)"
+  );
+  const isMediumDevice = useMediaQuery(
+    "only screen and (min-width : 641px) and (max-width : 768px)"
+  );
+  const isLargeDevice = useMediaQuery(
+    "only screen and (min-width : 769px) and (max-width : 1024px)"
+  );
+  const isExtraLargeDevice = useMediaQuery(
+    "only screen and (min-width : 1025px)"
+  );
+
+
   const resetTimeout = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
@@ -120,7 +132,8 @@ const ImageSlider = ({ innerRef }) => {
     // Función para manejar el cambio de tamaño de la ventana
     const handleResize = () => {
       const height = window.innerHeight;
-      if (height < 800) {
+      
+      if (height < 900) {
         setIsShort(true);
         // } else if (height < 1450) {
         //   setIsShort(true);
@@ -254,11 +267,11 @@ const ImageSlider = ({ innerRef }) => {
   }
 
   return (
-    <div id="inicio" style={matches ? { ...sliderStyles, height: imgHeightDesktop } : {...sliderStyles, marginTop: '98px'}} ref={innerRef}>
+    <div id="inicio" style={matches ? { ...sliderStyles, height: imgHeightDesktop } : { ...sliderStyles, marginTop: '98px' }} ref={innerRef}>
       <div style={matches ? slideStyles : {}}></div>
-
       {matches ?
         <>
+        {/* DESKTOP */}
           <Box sx={boxStyleDesktop}>
             <div className="row" >
               <div className="col-sm-12 sailec" style={{
@@ -332,6 +345,7 @@ const ImageSlider = ({ innerRef }) => {
               value={slides[currentIndex].key}
               index={slides[currentIndex].key}
               isShort={isShort}
+              isMediumDevice={isMediumDevice}
             >
               {slides[currentIndex].bajada.slice(0, 200)}
             </CustomTabPanel>
@@ -351,17 +365,17 @@ const ImageSlider = ({ innerRef }) => {
                   className="col-3 sailec white_menu_urls"
                   onClick={() => goToSlide(slideIndex)}
                   sx={{
-                    height: '97px',
+                    alignItems: 'baseline',
                     bgcolor: styles[slideIndex].color,
                     color: '#fff',
-                    textTransform: 'capitalize',
+                    fontFamily: 'sailec',
+                    fontSize: isMediumDevice? '16px' : isShort ? '20px' : '24px',
                     fontWeight: 700,
-                    fontSize: isShort ? '20px' : '24px',
-                    lineHeight: '32px',
+                    height: '97px',
+                    lineHeight: isMediumDevice? '22px' :'32px',
                     maxWidth: 'unset',
-                    alignItems: 'baseline',
                     textAlign: 'left',
-                    fontFamily: 'sailec'
+                    textTransform: 'capitalize',
                   }}
                   label={slide.titulo}
                   {...a11yProps(slideIndex)}

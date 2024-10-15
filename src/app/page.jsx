@@ -285,11 +285,13 @@ export default function Home() {
           :
           <>
             {blogs.length > 0 && isSmallDevice && <ImageSlider slides={blogs.slice(-4)} innerRef={el => sectionRefs.current[0] = el} style={{ height: '100vh', padding: '1rem' }} />}
+            {blogs.length > 0 && isMediumDevice && <ImageSlider slides={blogs.slice(-4)} innerRef={el => sectionRefs.current[0] = el} style={{ height: '100vh', padding: '1rem' }} />}
             {blogs.length > 0 && isExtraLargeDevice && <ImageSlider slides={blogs.slice(-4)} innerRef={el => sectionRefs.current[0] = el} style={{ height: '100vh', padding: '1rem' }} />}
+            {blogs.length > 0 && isLargeDevice && <ImageSlider slides={blogs.slice(-4)} innerRef={el => sectionRefs.current[0] = el} style={{ height: '100vh', padding: '1rem' }} />}
             {/* {isLoading && <strong>Cargando...</strong>} */}
             {/* {isError && <p>Ha habido un error</p>} */}
             {/* {!isError && blogs.length === 0 && <Carrousel />} */}
-            {blogs.length > 0 && <div style={{background: '#f1f1f1'}}><ReservaTuHora innerRef={el => sectionRefs.current[0] = el} style={{ height: '100vh', padding: '1rem' }} /> </div>}
+            {blogs.length > 0 && <div style={{ background: '#f1f1f1' }}><ReservaTuHora innerRef={el => sectionRefs.current[0] = el} style={{ height: '100vh', padding: '1rem' }} /> </div>}
             {blogs.length > 0 && <div ><QuienesSomos /></div>}
             {blogs.length > 0 && <TestSlider slides={tests.slice(0, 4)} innerRef={el => sectionRefs.current[0] = el} style={{ height: '100vh', padding: '1rem' }} />}
 
