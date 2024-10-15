@@ -80,12 +80,12 @@ export const blogs = [
       {
         titulo: '5 Técnicas para Reducir la Ansiedad',
         bajada: 'Descubre cinco poderosas técnicas para aliviar la ansiedad: respiración controlada, autoinstrucciones, grounding, visualización y meditación guiada, todas disponibles para descargar.',
-        url: '5_tecnicas_para_reducir_la_ansiedad.pdf'
+        url: 'https://reposaludmental.blob.core.windows.net/publicsite/01%20Cinco%20técnicas%20para%20reducir%20la%20ansiedad/descargables/5%20técnicas%20para%20reducir%20la%20ansiedad.pdf?sp=rl&st=2024-10-02T00:13:39Z&se=2099-10-02T08:13:39Z&spr=https&sv=2022-11-02&sr=c&sig=GotHrZkZjeRQpnGTT1OxRvuCvwqj%2BJSQkS7Tn5yz8qk%3D'
       },
       {
         titulo: 'Mindfulness como técnica para reducir la ansiedad',
         bajada: 'Descubre cómo la práctica del mindfulness puede ayudarte a reducir la ansiedad, enfocándote en el momento presente y observando tus pensamientos sin juzgar.',
-        url: 'mindfulness_como_tecnica_para_reducir_la_ansiedad.pdf'
+        url: 'https://reposaludmental.blob.core.windows.net/publicsite/01%20Cinco%20técnicas%20para%20reducir%20la%20ansiedad/descargables/Mindfulness%20como%20t%C3%A9cnica%20para%20reducir%20la%20ansiedad.pdf?sp=rl&st=2024-10-02T00:13:39Z&se=2099-10-02T08:13:39Z&spr=https&sv=2022-11-02&sr=c&sig=GotHrZkZjeRQpnGTT1OxRvuCvwqj%2BJSQkS7Tn5yz8qk%3D'
       }
     ]
   },
@@ -132,7 +132,7 @@ export const blogs = [
       {
         titulo: 'Estrategias de intervención para la prevención del suicidio ',
         bajada: 'Explora estrategias efectivas de intervención para prevenir el suicidio, incluyendo cómo hablar abiertamente, escuchar con empatía y proporcionar apoyo adecuado.',
-        url: 'estrategias_de_intervencion.pdf'
+        url: 'https://reposaludmental.blob.core.windows.net/publicsite/02%20Suicidio%20c%C3%B3mo%20buscar%20ayuda%20y%20ayudar/descargables/Estrategias%20de%20intervenci%C3%B3n%20para%20la%20prevenci%C3%B3n%20del%20suicidio.pdf?sp=rl&st=2024-10-02T00:13:39Z&se=2099-10-02T08:13:39Z&spr=https&sv=2022-11-02&sr=c&sig=GotHrZkZjeRQpnGTT1OxRvuCvwqj%2BJSQkS7Tn5yz8qk%3D'
       },
       {
         titulo: 'Prevención del suicidio ¿Cómo identificar señales de alerta?',
@@ -186,8 +186,16 @@ export const blogs = [
       {
         titulo: 'Señales de riesgo en mi consumo de alcohol y drogas',
         bajada: 'Identifica las señales de riesgo en tu consumo de alcohol y drogas para tomar acción temprana y proteger tu bienestar general.',
-        url: 'senales_de_riesgo_en_consumo_de_alcohol_y_drogas.pdf'
+        url: 'https://reposaludmental.blob.core.windows.net/publicsite/03%20Drogas%20y%20alcohol%20c%C3%B3mo%20evitar%20el%20exceso/descargables/Señales%20de%20riesgo%20en%20mi%20consumo%20de%20alcohol%20y%20drogas.pdf?sp=rl&st=2024-10-02T00:13:39Z&se=2099-10-02T08:13:39Z&spr=https&sv=2022-11-02&sr=c&sig=GotHrZkZjeRQpnGTT1OxRvuCvwqj%2BJSQkS7Tn5yz8qk%3D'
       }
+      /* 
+
+      Alcohol y drogas: ¿cómo evito los excesos?.pdf
+
+      https://reposaludmental.blob.core.windows.net/publicsite/03%20Drogas%20y%20alcohol%20c%C3%B3mo%20evitar%20el%20exceso/descargables/Alcohol%20y%20drogas%3A%20%C2%BFc%C3%B3mo%20evito%20los%20excesos?.pdf?sp=rl&st=2024-10-02T00:13:39Z&se=2099-10-02T08:13:39Z&spr=https&sv=2022-11-02&sr=c&sig=GotHrZkZjeRQpnGTT1OxRvuCvwqj%2BJSQkS7Tn5yz8qk%3D
+      
+      
+      */
     ]
   },
   {
@@ -242,7 +250,7 @@ export const blogs = [
 `,
     imagen: `/primeros_dias_01.jpg`,
     // imagen: `${process.env.NEXT_PUBLIC_BASE_IMG}iStock-1479946769_arriba.jpg${process.env.NEXT_PUBLIC_KEY_IMG}`,
-    
+
     video: '',
     // video: 'https://www.youtube.com/embed/SsICv9BGemc?si=J6EOYsvxBxWB1cEw',
     downloads: [
@@ -256,6 +264,23 @@ export const blogs = [
         bajada: 'Consejos prácticos para gestionar el tiempo, construir redes y cuidar tu bienestar en tu adaptación universitaria.',
         url: 'tips_para_mi_adaptacion_universitaria.pdf'
       }
+
+      /* 
+      
+
+      05 ¿Primeros días en la U? Tips útiles/
+      construye tu plan de adaptación.pdf
+      Tips para mi adaptación universitaria.pdf
+
+      https://reposaludmental.blob.core.windows.net/publicsite/05 ¿Primeros días en la U? Tips útiles/construye tu plan de adaptación.pdf?sp=rl&st=2024-10-02T00:13:39Z&se=2099-10-02T08:13:39Z&spr=https&sv=2022-11-02&sr=c&sig=GotHrZkZjeRQpnGTT1OxRvuCvwqj%2BJSQkS7Tn5yz8qk%3D
+
+      https://reposaludmental.blob.core.windows.net/publicsite/05%20%3FPrimeros%20d%C3%ADas%20en%20la%20U%3F%20Tips%20%C3%BAtiles/construye%20tu%20plan%20de%20adaptaci%C3%B3n.pdf?sp=rl&st=2024-10-02T00:13:39Z&se=2099-10-02T08:13:39Z&spr=https&sv=2022-11-02&sr=c&sig=GotHrZkZjeRQpnGTT1OxRvuCvwqj%2BJSQkS7Tn5yz8qk%3D
+
+      https://reposaludmental.blob.core.windows.net/publicsite/05 ¿Primeros días en la U? Tips útiles/Tips para mi adaptación universitaria.pdf?sp=rl&st=2024-10-02T00:13:39Z&se=2099-10-02T08:13:39Z&spr=https&sv=2022-11-02&sr=c&sig=GotHrZkZjeRQpnGTT1OxRvuCvwqj%2BJSQkS7Tn5yz8qk%3D
+
+      https://reposaludmental.blob.core.windows.net/publicsite/05%20%3FPrimeros%20d%C3%ADas%20en%20la%20U%3F%20Tips%20%C3%BAtiles/Tips%20para%20mi%20adaptaci%C3%B3n%20universitaria.pdf?sp=rl&st=2024-10-02T00:13:39Z&se=2099-10-02T08:13:39Z&spr=https&sv=2022-11-02&sr=c&sig=GotHrZkZjeRQpnGTT1OxRvuCvwqj%2BJSQkS7Tn5yz8qk%
+
+      */
     ]
   },
 
