@@ -240,7 +240,7 @@ export const blogs = [
 <p>Los primeros días en la universidad pueden ser desafiantes, pero con una buena organización, actitud positiva y el apoyo de tus seres queridos y compañeros, podrás superar cualquier obstáculo. Recuerda que la universidad es una oportunidad para crecer tanto académica como personalmente. No te preocupes si las cosas no salen perfectas al principio; lo importante es aprender de cada experiencia y seguir adelante. ¡Ánimo y éxito en esta nueva etapa de tu vida!</p>
 
 `,
-    imagen: `primeros_dias_01.jpg`,
+    imagen: `/primeros_dias_01.jpg`,
     // imagen: `${process.env.NEXT_PUBLIC_BASE_IMG}iStock-1479946769_arriba.jpg${process.env.NEXT_PUBLIC_KEY_IMG}`,
     
     video: '',
