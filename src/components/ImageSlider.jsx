@@ -179,7 +179,7 @@ const ImageSlider = ({ innerRef }) => {
   const slideStyles = {
     // backgroundImage: `url(${slides[currentIndex].imagen})`,
     width: '100%',
-    height: imgHeightDesktop ,
+    height: imgHeightDesktop,
     backgroundPosition: 'top',
     backgroundSize: 'cover',
   }
@@ -244,14 +244,13 @@ const ImageSlider = ({ innerRef }) => {
   }
 
   const boxStyleDesktop = {
-    padding: '32px 0 32px 0',
-    textWrap: 'pretty',
-    margin: `calc(-${imgHeightDesktop} - 50px) auto 0px`,
-    backgroundColor: '#00000089',
-    height: imgHeightDesktop,
-    display: 'flex',
     alignItems: 'flex-start',
-    paddingTop: '150px',
+    backgroundColor: '#00000089',
+    display: 'flex',
+    height: imgHeightDesktop,
+    margin: `calc(-${imgHeightDesktop} - 50px) auto 0px`,
+    padding: '150px 0 32px 0',
+    textWrap: 'pretty',
     width: '100%',
   }
 
@@ -268,27 +267,26 @@ const ImageSlider = ({ innerRef }) => {
 
   return (
     <div id="inicio" style={matches ? { ...sliderStyles, height: imgHeightDesktop } : { ...sliderStyles, marginTop: '98px' }} ref={innerRef}>
-      <div style={matches && slideStyles }>
-      <Image
+      <div style={matches && slideStyles}>
+        <Image
           src={slides[currentIndex].imagen}
           alt={slides[currentIndex].imagen}
+          layout="fill"
+          objectFit="cover"
+          objectPosition="top"
           sizes="100vw"
-          width={0}
-          height={0}
           style={{
-            minWidth: '100%',
-            minHeight: '100%',
             overflow: 'hidden',
             margin: 'auto',
             borderRadius: '8px',
-            zIndex: 0,
+            zIndex: "-1",
           }}
         />
       </div>
       {matches ?
         <>
           {/* DESKTOP */}
-          <Box sx={boxStyleDesktop}>
+          <Box sx={{...boxStyleDesktop, zIndex: 99999}}>
             <div className="row" >
               <div className="col-sm-12 sailec" style={{
                 width: `${matches ? '90vw' : '100%'}`,
@@ -304,7 +302,7 @@ const ImageSlider = ({ innerRef }) => {
                       fontWeight: 700,
                       lineHeight: isShort ? '52px' : '116px',
                       textWrap: 'balance',
-                      fontFamily: 'sailec'
+                      fontFamily: 'sailec',
                     }}>
                     {slides[currentIndex].titulo}
                   </h2>
@@ -344,7 +342,7 @@ const ImageSlider = ({ innerRef }) => {
               marginLeft: `calc(25vw * ${slides[currentIndex].id})`,
               backgroundColor: styles[currentIndex].color,
               color: "#fff",
-              display: 'flex', 
+              display: 'flex',
               alignItems: 'center',
               '&:hover': {
                 color: 'yellowgreen'
