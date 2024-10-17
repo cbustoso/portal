@@ -179,7 +179,7 @@ const ImageSlider = ({ innerRef }) => {
   const slideStyles = {
     // backgroundImage: `url(${slides[currentIndex].imagen})`,
     width: '100%',
-    height: matches ? imgHeightDesktop : imgHeightMobile,
+    height: imgHeightDesktop ,
     backgroundPosition: 'top',
     backgroundSize: 'cover',
   }
@@ -187,7 +187,7 @@ const ImageSlider = ({ innerRef }) => {
   const slideStylesMobile = {
     backgroundColor: styles[currentIndex].color,
     width: '100%',
-    height: matches ? imgHeightDesktop : imgHeightMobile,
+    height: imgHeightMobile,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
   }
@@ -268,19 +268,20 @@ const ImageSlider = ({ innerRef }) => {
 
   return (
     <div id="inicio" style={matches ? { ...sliderStyles, height: imgHeightDesktop } : { ...sliderStyles, marginTop: '98px' }} ref={innerRef}>
-      <div style={matches ? slideStyles : {}}>
-        <Image
+      <div style={matches && slideStyles }>
+      <Image
           src={slides[currentIndex].imagen}
           alt={slides[currentIndex].imagen}
           sizes="100vw"
           width={0}
           height={0}
           style={{
-            width: '100%',
-            height: '100%',
+            minWidth: '100%',
+            minHeight: '100%',
             overflow: 'hidden',
             margin: 'auto',
             borderRadius: '8px',
+            zIndex: 0,
           }}
         />
       </div>
@@ -343,7 +344,7 @@ const ImageSlider = ({ innerRef }) => {
               marginLeft: `calc(25vw * ${slides[currentIndex].id})`,
               backgroundColor: styles[currentIndex].color,
               color: "#fff",
-              display: 'flex',
+              display: 'flex', 
               alignItems: 'center',
               '&:hover': {
                 color: 'yellowgreen'
@@ -391,6 +392,7 @@ const ImageSlider = ({ innerRef }) => {
                     maxWidth: 'unset',
                     textAlign: 'left',
                     textTransform: 'capitalize',
+
                   }}
                   label={slide.titulo}
                   {...a11yProps(slideIndex)}
