@@ -5,9 +5,9 @@ import { useEffect, useState, Fragment } from 'react'
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 // import TextEditor from '../../../components/TextEditor';
-import Sidebar from '../../../components/Sidebar';
-import FeatherIcon from 'feather-icons-react/build/FeatherIcon';
-import Select from "react-select";
+// import Sidebar from '../../../components/Sidebar';
+// import FeatherIcon from 'feather-icons-react/build/FeatherIcon';
+// import Select from "react-select";
 /* eslint-disable no-unused-vars */
 // import { fetchBlog } from '@/services/BlogServices';
 import FooterDae from '@/components/Footer';
