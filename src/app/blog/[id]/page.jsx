@@ -10,7 +10,7 @@ import FeatherIcon from 'feather-icons-react/build/FeatherIcon';
 import Select from "react-select";
 /* eslint-disable no-unused-vars */
 // import { fetchBlog } from '@/services/BlogServices';
-import FooterDae from '@/components/FooterDae';
+import FooterDae from '@/components/Footer';
 import { blogs } from '@/utils/blogs';
 import useMediaQuery from '@mui/material/useMediaQuery';
 

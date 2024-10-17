@@ -1,26 +1,22 @@
-import { useState } from "react";
-import Link from "next/link";
-import { CircleRounded } from "@mui/icons-material";
+// import { useState } from "react";
+// import Link from "next/link";
+// import { CircleRounded } from "@mui/icons-material";
 import { Grid, Box, Card } from "@mui/material";
 // import TestCard from './Card'
-import CardHeader from '@mui/material/CardHeader';
+// import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
+// import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
 import ReserveBtn from "./ReserveBtn";
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { profesional01 } from "./imagepath";
+// import { profesional01 } from "./imagepath";
 
 const ReservaTuHora = () => {
   const matches = useMediaQuery('(min-width:600px)');
-
-
   return (
     <div className={`container col-12 col-lg-10 align-self-center p-0 ${matches && 'mb-5'}`} style={{ background: '#f1f1f1' }}>
-
       {/* <TestCard test={slides} /> */}
-
       <div>
         <Box sx={{
           // height: '45svh',

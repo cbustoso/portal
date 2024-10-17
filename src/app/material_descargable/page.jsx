@@ -5,7 +5,7 @@ import { blogs } from "@/utils/blogs";
 import { useRouter } from "next/navigation";
 import { useMediaQuery } from "@mui/material";
 import { FaArrowLeft } from "react-icons/fa";
-import FooterDae from "@/components/FooterDae";
+import FooterDae from "@/components/Footer";
 import SimpleBackdrop from "@/components/Backdrop";
 import { saludMental03 } from "@/components/imagepath";
 import Accordion from '@mui/material/Accordion';

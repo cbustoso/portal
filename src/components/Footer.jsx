@@ -1,18 +1,11 @@
 'use client'
-import Divider from '@mui/material/Divider';
 import Image from 'next/image';
 import Link from 'next/link';
 import { white_logo, white_acreditacion, logo02_white } from './imagepath';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import { LinkSharp, LocationCity } from '@mui/icons-material';
-import Map from 'feather-icons-react/build/IconComponents/Map';
-import Phone from 'feather-icons-react/build/IconComponents/Phone';
-import Mail from 'feather-icons-react/build/IconComponents/Mail';
 import { Box, useMediaQuery } from '@mui/material';
 
 import { FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa";
-import { BsInstagram, BsTwitterX } from "react-icons/bs";
-import { FaXTwitter } from "react-icons/fa6";
+import { BsInstagram } from "react-icons/bs";
 import { FaLocationDot } from "react-icons/fa6";
 import ReserveBtn from './ReserveBtn';
 import { useEffect } from 'react';
@@ -128,7 +121,7 @@ const FooterDae = () => {
               }}>
               <p style={{ fontWeight: 700, fontSize: "20px", lineHeight: "28px", margin: "10px 0 0" }}>¿Hablemos?</p>
               <p style={{ fontSize: "14px", lineHeight: "20px", marginBottom: "8px" }}>Si necesitas ayuda, contáctanos y te ayudaremos.</p>
-              <ReserveBtn text='Reservar' bgColor="#FABB00" color="#000" />
+              {/* <ReserveBtn text='Reservar' bgColor="#FABB00" color="#000" /> */}
             </div>
           </div>
           {matches

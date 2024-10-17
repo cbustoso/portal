@@ -102,14 +102,14 @@ const TestSlider = ({ slides, innerRef }) => {
     if (totalSlides > 2) {
       resetTimeout();
       timeoutRef.current = setTimeout(
-        () => setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides),
+        () => setCurrentIndex((prevIndex) => (prevIndex + 2) % totalSlides),
         5500 // Cambiar el slide cada 3 segundos
       );
     }
     if (!matches) {
       resetTimeout();
       timeoutRef.current = setTimeout(
-        () => setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides),
+        () => setCurrentIndex((prevIndex) => (prevIndex + 2) % totalSlides),
         5500 // Cambiar el slide cada 3 segundos
       );
     }
@@ -125,7 +125,7 @@ const TestSlider = ({ slides, innerRef }) => {
       {
         matches
           ? <div style={sliderStyles}>
-            {slides.length >= 2 && <ChevronLeft sx={leftArrowStyles} onClick={prevSlide} />}
+            {slides.length > 2 && <ChevronLeft sx={leftArrowStyles} onClick={prevSlide} />}
             <Box sx={{ textWrap: 'pretty', margin: '0 auto' }}>
               <div className="row" style={{ backgroundColor: '#F1F1F1', padding: '32px 0 0 0' }}>
                 <h2
@@ -152,7 +152,7 @@ const TestSlider = ({ slides, innerRef }) => {
                             <CardContent>
                               <Typography variant="body2" color="text.secondary" className="sailec-bold"
                                 sx={{ color: 'black', fontWeight: 700, fontSize: '24px', lineHeight: '32px' }}>{slide.titulo}</Typography>
-                              <Typography variant="body2" color="text.secondary" className="lato" sx={{height: '3rem'}}>{slide.bajada}</Typography>
+                              <Typography variant="body2" color="text.secondary" className="lato" sx={{ height: '3rem' }}>{slide.bajada}</Typography>
                             </CardContent>
                             <CardActions disableSpacing>
                               <Grid container direction="row" justifyContent="flex-start" alignItems="baseline">
@@ -180,7 +180,7 @@ const TestSlider = ({ slides, innerRef }) => {
                 </div>
               </div>
             </Box>
-            {slides.length >= 2 && <ChevronRight sx={rightArrowStyles} onClick={nextSlide} />}
+            {slides.length > 2 && <ChevronRight sx={rightArrowStyles} onClick={nextSlide} />}
             {slides.length >= 2 && <div style={matches && { ...dotsContainerStyles, backgroundColor: '#F1F1F1' }}>
               {Array(Math.ceil(slides.length / 2)).fill().map((_, dotIndex) => (
                 <div key={dotIndex} style={dotStyles} onClick={() => goToSlide(dotIndex)}>

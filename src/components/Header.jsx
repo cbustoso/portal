@@ -10,12 +10,10 @@ import { Tooltip, Avatar } from '@mui/material';
 
 import { AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Button, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-// import { IoMdLogIn } from "react-icons/io";
 import { FaUserCircle } from "react-icons/fa";
 import { FaChevronDown } from "react-icons/fa";
 
 const pagesWithEvents = [
-  // { title: 'INICIO', url: '/#inicio', label: 'inicio' },
   { title: 'TEST AUTODIAGNÓSTICO?', url: '/#test_autodiagnostico', label: 'test_autodiagnostico' },
   { title: 'EVENTOS', url: '/#eventos', label: 'eventos' },
   { title: 'PREGUNTAS FRECUENTES', url: '/#preguntas_frecuentes', label: 'preguntas_frecuentes' },
@@ -24,14 +22,13 @@ const pagesWithEvents = [
 ];
 
 const pagesWithoutEvents = [
-  // { title: 'INICIO', url: '/#inicio', label: 'inicio' },
   { title: 'TEST AUTODIAGNÓSTICO', url: '/#test_autodiagnostico', label: 'test_autodiagnostico' },
   { title: 'PREGUNTAS FRECUENTES', url: '/#preguntas_frecuentes', label: 'preguntas_frecuentes' },
   { title: 'MATERIAL DESCARGABLE', url: '/material_descargable', label: 'material_descargable' },
   { title: 'QUIÉNES SOMOS', url: '/quienes_somos', label: 'quienes_somos' },
 ];
 
-const settings = [
+const subMenu = [
   { title: 'Intervenciones', url: '/como_trabajamos', label: '/como_trabajamos' },
   { title: 'Plan de Acción', url: '/plan-de-accion-en-salud-mental', label: '/plan-de-accion-en-salud-mental' },
   { title: 'Prevención', url: '/intervencion-en-promocion-y-prevencion', label: '/intervencion-en-promocion-y-prevencion' },
@@ -122,7 +119,8 @@ const Header = () => {
         background: 'white',
         color: 'black',
         margin: 0,
-        height: matches ? '112px' : '98px',
+        maxHeight: '112px',
+        minHeight: '98px',
         justifyContent: matches ? 'center' : 'flex-end'
       }}
     >
@@ -216,7 +214,7 @@ const Header = () => {
                   open={Boolean(anchorElUser)}
                   onClose={handleCloseUserMenu}
                 >
-                  {settings.map((setting) => (
+                  {subMenu.map((setting) => (
                     <MenuItem key={setting.url} onClick={handleCloseUserMenu}>
                       <Typography textAlign="center" className="sailec">
                         <a href={setting.url} style={{ color: 'black', fontFamily: 'sailec', textDecoration: 'none' }}>
@@ -297,7 +295,7 @@ const Header = () => {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
-                {settings.map((setting) => (
+                {subMenu.map((setting) => (
                   <MenuItem key={setting.url} onClick={handleCloseUserMenu}>
                     <Typography textAlign="center" className="sailec">
                       <a href={setting.url} style={{ color: 'black', fontFamily: 'sailec', textDecoration: 'none' }}>

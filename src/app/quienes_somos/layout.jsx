@@ -1,6 +1,6 @@
 'use client'
 import { useMediaQuery } from "@mui/material";
-import FooterDae from "@/components/FooterDae";
+import FooterDae from "@/components/Footer";
 import { FaArrowLeft } from "react-icons/fa";
 import { useRouter, usePathname } from "next/navigation";
 

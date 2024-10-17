@@ -71,7 +71,7 @@ const CustomTabPanel = ({ children, value, index, isShort, isMediumDevice, ...ot
             sx={{
               fontWeight: 400,
               fontSize: isMediumDevice ? '14px' : isShort ? '18px' : '20px',
-              lineHeight: isMediumDevice ? '20px': '28px',
+              lineHeight: isMediumDevice ? '20px' : '28px',
               fontFamily: 'sailec'
             }}>{children}</Typography>
         </Box>
@@ -132,7 +132,7 @@ const ImageSlider = ({ innerRef }) => {
     // Función para manejar el cambio de tamaño de la ventana
     const handleResize = () => {
       const height = window.innerHeight;
-      
+
       if (height < 900) {
         setIsShort(true);
         // } else if (height < 1450) {
@@ -177,7 +177,7 @@ const ImageSlider = ({ innerRef }) => {
   }
 
   const slideStyles = {
-    backgroundImage: `url(${slides[currentIndex].imagen})`,
+    // backgroundImage: `url(${slides[currentIndex].imagen})`,
     width: '100%',
     height: matches ? imgHeightDesktop : imgHeightMobile,
     backgroundPosition: 'top',
@@ -268,10 +268,25 @@ const ImageSlider = ({ innerRef }) => {
 
   return (
     <div id="inicio" style={matches ? { ...sliderStyles, height: imgHeightDesktop } : { ...sliderStyles, marginTop: '98px' }} ref={innerRef}>
-      <div style={matches ? slideStyles : {}}></div>
+      <div style={matches ? slideStyles : {}}>
+        <Image
+          src={slides[currentIndex].imagen}
+          alt={slides[currentIndex].imagen}
+          sizes="100vw"
+          width={0}
+          height={0}
+          style={{
+            width: '100%',
+            height: '100%',
+            overflow: 'hidden',
+            margin: 'auto',
+            borderRadius: '8px',
+          }}
+        />
+      </div>
       {matches ?
         <>
-        {/* DESKTOP */}
+          {/* DESKTOP */}
           <Box sx={boxStyleDesktop}>
             <div className="row" >
               <div className="col-sm-12 sailec" style={{
@@ -369,10 +384,10 @@ const ImageSlider = ({ innerRef }) => {
                     bgcolor: styles[slideIndex].color,
                     color: '#fff',
                     fontFamily: 'sailec',
-                    fontSize: isMediumDevice? '16px' : isShort ? '20px' : '24px',
+                    fontSize: isMediumDevice ? '16px' : isShort ? '20px' : '24px',
                     fontWeight: 700,
                     height: '97px',
-                    lineHeight: isMediumDevice? '22px' :'32px',
+                    lineHeight: isMediumDevice ? '22px' : '32px',
                     maxWidth: 'unset',
                     textAlign: 'left',
                     textTransform: 'capitalize',
@@ -433,7 +448,7 @@ const ImageSlider = ({ innerRef }) => {
                   </Link>
                   <Image
                     src={slides[currentIndex].imagen}
-                    alt=""
+                    alt={slides[currentIndex].imagen}
                     width={0}
                     height={250}
                     sizes="100vw"
