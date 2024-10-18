@@ -13680,3 +13680,23 @@ td:has(div.text-end) {
   border: 1px solid #1976d2;
   color: #ffffff
 }
+
+/* MEDIA QUERY */
+
+.mobile {
+  display: block;
+}
+
+.desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
+  }
+}

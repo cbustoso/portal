@@ -121,13 +121,13 @@ const TestSlider = ({ slides, innerRef }) => {
 
 
   return (
-    <div className='container col-12 align-self-center' style={{ padding: '0px', margin: '0px', maxWidth: '100vw' }} id="test_autodiagnostico" ref={innerRef}>
+    <div className='container col-12 align-self-center' style={{ padding: '0px', margin: '0px', maxWidth: '100vw', scrollMarginTop: '100px' }} id="test_autodiagnostico" ref={innerRef}>
       {
         matches
           ? <div style={sliderStyles}>
             {slides.length > 2 && <ChevronLeft sx={leftArrowStyles} onClick={prevSlide} />}
             <Box sx={{ textWrap: 'pretty', margin: '0 auto' }}>
-              <div className="row" style={{ backgroundColor: '#F1F1F1', padding: '32px 0 0 0' }}>
+              <div className="row" style={{ backgroundColor: '#F1F1F1', padding: '32px 0 ' }}>
                 <h2
                   className="sailec"
                   style={{ fontWeight: 700, fontSize: '32px', lineHeight: '40px', textAlign: 'center' }}>
@@ -181,10 +181,10 @@ const TestSlider = ({ slides, innerRef }) => {
               </div>
             </Box>
             {slides.length > 2 && <ChevronRight sx={rightArrowStyles} onClick={nextSlide} />}
-            {slides.length >= 2 && <div style={matches && { ...dotsContainerStyles, backgroundColor: '#F1F1F1' }}>
+            {slides.length > 2 && <div style={matches && { ...dotsContainerStyles, backgroundColor: '#F1F1F1' }}>
               {Array(Math.ceil(slides.length / 2)).fill().map((_, dotIndex) => (
                 <div key={dotIndex} style={dotStyles} onClick={() => goToSlide(dotIndex)}>
-                  <CircleRounded sx={{ fontSize: '20px', margin: '24px 0', color: dotIndex === currentIndex ? '#4054B2' : '#3886FF' }} />
+                  <CircleRounded sx={{ fontSize: '20px', margin: '0 0 24px 0', color: dotIndex === currentIndex ? '#4054B2' : '#3886FF' }} />
                 </div>
               ))}
             </div>}

@@ -1,5 +1,6 @@
 'use client'
 /* eslint-disable no-unused-vars */
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useSection } from "@/context/SectionContext";
 import ReserveBtn from "./ReserveBtn";
@@ -142,7 +143,7 @@ const Header = () => {
               fontFamily: 'sailec'
             }}
           >
-            <img
+            <Image
               src={logo.src}
               width={263}
               height={70}
@@ -244,7 +245,7 @@ const Header = () => {
               fontFamily: 'sailec',
             }}
           >
-            <img src={'https://github.com/Niennis/imagesudp/blob/main/UDP_Logo_small.png?raw=true'} width={100} alt="" />{" "}
+            <Image src={'https://github.com/Niennis/imagesudp/blob/main/UDP_Logo_small.png?raw=true'} height={0} width={100} alt="logo" style={{ width: '100px', height: 'auto' }} />{" "}
           </Typography>
 
           {/* MENU DASHBOARD */}

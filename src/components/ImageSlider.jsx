@@ -255,41 +255,43 @@ const ImageSlider = ({ innerRef }) => {
   }
 
   const boxStyleMobile = {
+    alignItems: 'center',
+    display: 'flex',
+    height: imgHeightMobile,
+    margin: ` auto 0px`,
+    marginTop: 'calc(-100vh + 150px)',
     padding: '24px 16px',
     textWrap: 'pretty',
-    margin: `-${imgHeightMobile} auto 0px`,
     // padding: '24px ',
-    height: imgHeightMobile,
-    display: 'flex',
-    alignItems: 'center',
-    width: '100%',
+    width: '100vw',
   }
 
   return (
     <div id="inicio" style={matches ? { ...sliderStyles, height: imgHeightDesktop } : { ...sliderStyles, marginTop: '98px' }} ref={innerRef}>
-      <div style={matches && slideStyles}>
-        <Image
-          src={slides[currentIndex].imagen}
-          alt={slides[currentIndex].imagen}
-          layout="fill"
-          objectFit="cover"
-          objectPosition="top"
-          sizes="100vw"
-          style={{
-            overflow: 'hidden',
-            margin: 'auto',
-            borderRadius: '8px',
-            zIndex: "-1",
-          }}
-        />
-      </div>
+
       {matches ?
         <>
           {/* DESKTOP */}
-          <Box sx={{...boxStyleDesktop, zIndex: 99999}}>
+          <div style={matches && slideStyles}>
+            <Image
+              src={slides[currentIndex].imagen}
+              alt={slides[currentIndex].imagen}
+              layout="fill"
+              objectFit="cover"
+              objectPosition="top"
+              sizes="100vw"
+              style={{
+                overflow: 'hidden',
+                margin: 'auto',
+                borderRadius: '8px',
+                zIndex: "-1",
+              }}
+            />
+          </div>
+          <Box sx={{ ...boxStyleDesktop, zIndex: 99999 }}>
             <div className="row" >
               <div className="col-sm-12 sailec" style={{
-                width: `${matches ? '90vw' : '100%'}`,
+                width: '100%',
                 marginLeft: '60px'
               }}>
                 <div className="d-flex flex-column">
@@ -298,7 +300,8 @@ const ImageSlider = ({ innerRef }) => {
                     style={{
                       marginTop: '1em',
                       color: 'white',
-                      fontSize: isShort ? '48px' : '72px',
+                      fontSize: 'clamp(48px, 48px, 72px)',
+                      // fontSize: isShort ? '48px' : '72px',
                       fontWeight: 700,
                       lineHeight: isShort ? '52px' : '116px',
                       textWrap: 'balance',
@@ -344,15 +347,6 @@ const ImageSlider = ({ innerRef }) => {
               color: "#fff",
               display: 'flex',
               alignItems: 'center',
-              '&:hover': {
-                color: 'yellowgreen'
-              },
-              '&:active': {
-                color: 'yellowgreen'
-              },
-              '&:visited': {
-                color: 'yellowgreen'
-              }
             }}
           >
             <CustomTabPanel
@@ -412,10 +406,10 @@ const ImageSlider = ({ innerRef }) => {
               </div>
             ))}
           </div>
-          <Box sx={matches ? boxStyleDesktop : boxStyleMobile}>
+          <Box sx={!matches && boxStyleMobile}>
             <div className="row" >
               <div className="col-sm-12 sailec">
-                <div style={{ minHeight: '2rem' }}>
+                <div style={{ minHeight: '30vh' }}>
                   <h2 style={{ color: 'white', fontSize: '30px', fontWeight: 700, lineHeight: '40px' }}>{title}</h2>
                   <p style={{
                     color: 'white',
@@ -432,6 +426,7 @@ const ImageSlider = ({ innerRef }) => {
                   direction="row"
                   justifyContent="flex-end"
                   alignItems="baseline"
+                  sx={{ width: '90vw'}}
                 >
                   <Link href={`/blog/${idBlog}`}>
                     <button
@@ -451,15 +446,19 @@ const ImageSlider = ({ innerRef }) => {
                     alt={slides[currentIndex].imagen}
                     width={0}
                     height={250}
+                    objectPosition="center"
                     sizes="100vw"
                     style={{
-                      width: '90%',
+                      // width: '90%',
+                      maxHeight: '250px',
                       overflow: 'hidden',
+                      width: 'auto',
                       margin: 'auto',
                       borderRadius: '8px',
                       WebkitBoxShadow: '12px 12px 0px 0px rgba(166,166,166,1)',
                       MozBoxShadow: '12px 12px 0px 0px rgba(166,166,166,1)',
                       boxShadow: '12px 12px 0px 0px rgba(166,166,166,1)',
+                      objectFit : 'cover'
                     }}
                   />
 
