@@ -7,6 +7,7 @@ import Image from "next/image";
 import { MdOutlineChromeReaderMode } from "react-icons/md";
 import { blogs } from "@/utils/blogs";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { fetchBlogs } from "@/services/BlogServices";
 
 const theme = createTheme({
   palette: {
@@ -96,6 +97,8 @@ const ImageSlider = ({ innerRef }) => {
   const [idBlog, setIdBlog] = useState(blogs[0].id)
   const matches = useMediaQuery('(min-width:600px)');
   const [isShort, setIsShort] = useState(false);
+  const [data, setData] = useState(null)
+  const [apiLlamada, setApiLlamada] = useState(false); // Nueva bandera
 
   const [value, setValue] = useState(0);
   const divRef = useRef();
@@ -115,6 +118,25 @@ const ImageSlider = ({ innerRef }) => {
     "only screen and (min-width : 1025px)"
   );
 
+  const isShortDevice = useMediaQuery(
+    "only screen and (max-height: 700px)"
+  )
+
+
+  const fetch = async () => {
+    // if (!apiLlamada) {
+
+    //     try {
+    //       const response = await fetchBlogs();
+    //       // const result = await response.json();
+    //       setData(response);
+    //       setApiLlamada(true); // Marca que ya se hizo la llamada
+    //       console.log('RESULT', response)
+    //     } catch (error) {
+    //       console.log('ERRORSH', error.message);
+    //     }
+    // }
+  }
 
   const resetTimeout = () => {
     if (timeoutRef.current) {
@@ -128,6 +150,8 @@ const ImageSlider = ({ innerRef }) => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
       goToNext()
     };
+
+    fetch()
 
     // Función para manejar el cambio de tamaño de la ventana
     const handleResize = () => {
@@ -159,14 +183,14 @@ const ImageSlider = ({ innerRef }) => {
         window.removeEventListener('resize', handleResize);
       }
     };
-  }, [currentIndex, totalSlides]);
+  }, [currentIndex, totalSlides, apiLlamada]);
 
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  const imgHeightMobile = '83vh'
+  const imgHeightMobile = '80vh'
   const imgHeightDesktop = '100vh'
 
   const sliderStyles = {
@@ -187,7 +211,7 @@ const ImageSlider = ({ innerRef }) => {
   const slideStylesMobile = {
     backgroundColor: styles[currentIndex].color,
     width: '100%',
-    height: imgHeightMobile,
+    height: isShortDevice ? '100vh' : imgHeightMobile,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
   }
@@ -198,7 +222,7 @@ const ImageSlider = ({ innerRef }) => {
   }
 
   const dotStyles = {
-    margin: '-60px 8px',
+    margin: isShort ? '-30px 8px' : '-50px 8px',
     cursor: 'pointer',
     // color: '#fff'
   }
@@ -255,14 +279,13 @@ const ImageSlider = ({ innerRef }) => {
   }
 
   const boxStyleMobile = {
-    alignItems: 'center',
+    // alignItems: 'center', Mejor sacarlo
     display: 'flex',
-    height: imgHeightMobile,
-    margin: ` auto 0px`,
-    marginTop: 'calc(-100vh + 150px)',
+    height: isShortDevice ? '100vh' : imgHeightMobile, // 100vh si es chico, imgHeightMobile si es grande
+    // margin: 'auto 0px',
+    marginTop: isShortDevice ? '-100vh' : 'calc(-80vh)', // -100vh si es chico, 'calc(-100vh + 150px)' si es grande
     padding: '24px 16px',
     textWrap: 'pretty',
-    // padding: '24px ',
     width: '100vw',
   }
 
@@ -277,13 +300,18 @@ const ImageSlider = ({ innerRef }) => {
               src={slides[currentIndex].imagen}
               alt={slides[currentIndex].imagen}
               layout="fill"
-              objectFit="cover"
-              objectPosition="top"
+              // objectFit="cover"
+              // objectPosition="top"
+              // width={100}
+              // height={100}
               sizes="100vw"
               style={{
-                overflow: 'hidden',
-                margin: 'auto',
                 borderRadius: '8px',
+                layout: 'fill',
+                margin: 'auto',
+                objectFit: 'cover',
+                objectPosition: 'top',
+                overflow: 'hidden',
                 zIndex: "-1",
               }}
             />
@@ -395,38 +423,34 @@ const ImageSlider = ({ innerRef }) => {
 
         </> :
         <>
-          <div style={slideStylesMobile}></div>
-          <div style={dotsContainerStyles}>
-            {slides.map((slide, slideIndex) => (
-              <div
-                key={slideIndex}
-                style={dotStyles}
-                onClick={() => goToSlide(slideIndex)}
-              >
-              </div>
-            ))}
-          </div>
+          {/* MOBILE */}
+          <div style={{ ...slideStylesMobile }}></div>
           <Box sx={!matches && boxStyleMobile}>
             <div className="row" >
-              <div className="col-sm-12 sailec">
-                <div style={{ minHeight: '30vh' }}>
-                  <h2 style={{ color: 'white', fontSize: '30px', fontWeight: 700, lineHeight: '40px' }}>{title}</h2>
-                  <p style={{
-                    color: 'white',
-                    fontSize: '20px',
-                    fontWeight: 400,
-                    lineHeight: '32px',
-                  }}
-                  >
-                    {content.slice(0, 205)}
-                  </p>
-                </div>
+              <div className="col-sm-12 sailec" style={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-evenly',
+              }
+              }>
+                {/* <div style={{ minHeight: '30vh' }}> */}
+                <h2 style={{ color: 'white', fontSize: '30px', fontWeight: 700, lineHeight: '40px' }}>{title}</h2>
+                <p style={{
+                  color: 'white',
+                  fontSize: '20px',
+                  fontWeight: 400,
+                  lineHeight: '32px',
+                }}
+                >
+                  {content.slice(0, 205)}
+                </p>
+                {/* </div> */}
                 <Grid
                   container
                   direction="row"
                   justifyContent="flex-end"
                   alignItems="baseline"
-                  sx={{ width: '90vw'}}
+                  sx={{ width: '90vw' }}
                 >
                   <Link href={`/blog/${idBlog}`}>
                     <button
@@ -445,20 +469,21 @@ const ImageSlider = ({ innerRef }) => {
                     src={slides[currentIndex].imagen}
                     alt={slides[currentIndex].imagen}
                     width={0}
-                    height={250}
-                    objectPosition="center"
+                    height={0}
                     sizes="100vw"
                     style={{
-                      // width: '90%',
+                      width: 'auto',
+                      borderRadius: '8px',
+                      margin: 'auto',
+                      height: '250px',
                       maxHeight: '250px',
+                      objectPosition: 'center',
+                      objectFit: 'cover',
                       overflow: 'hidden',
                       width: 'auto',
-                      margin: 'auto',
-                      borderRadius: '8px',
                       WebkitBoxShadow: '12px 12px 0px 0px rgba(166,166,166,1)',
                       MozBoxShadow: '12px 12px 0px 0px rgba(166,166,166,1)',
                       boxShadow: '12px 12px 0px 0px rgba(166,166,166,1)',
-                      objectFit : 'cover'
                     }}
                   />
 

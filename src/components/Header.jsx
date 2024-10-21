@@ -245,7 +245,15 @@ const Header = () => {
               fontFamily: 'sailec',
             }}
           >
-            <Image src={'https://github.com/Niennis/imagesudp/blob/main/UDP_Logo_small.png?raw=true'} height={0} width={100} alt="logo" style={{ width: '100px', height: 'auto' }} />{" "}
+            <Image
+              src={'https://github.com/Niennis/imagesudp/blob/main/UDP_Logo_small.png?raw=true'}
+              height={0}
+              width={100}
+              alt="logo udp"
+              style={{
+                width: '100px',
+                height: 'auto',
+              }} />{" "}
           </Typography>
 
           {/* MENU DASHBOARD */}
