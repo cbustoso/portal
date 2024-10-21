@@ -2,6 +2,7 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable no-unused-vars */
 import { useEffect, useState, Fragment } from 'react'
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 // import TextEditor from '../../../components/TextEditor';
@@ -13,6 +14,7 @@ import { useRouter } from 'next/navigation';
 import FooterDae from '@/components/Footer';
 import { blogs } from '@/utils/blogs';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import ParserImgToImage from '@/components/Parser';
 
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -46,7 +48,7 @@ const card = (item) => (
       </Typography>
     </CardContent>
     <CardActions sx={{ backgroundColor: "#F1F1F1", justifyContent: 'flex-end' }}>
-      <a href= {process.env.NEXT_PUBLIC_BASE_IMG+item.url+process.env.NEXT_PUBLIC_KEY_IMG} >
+      <a href={process.env.NEXT_PUBLIC_BASE_IMG + item.url + process.env.NEXT_PUBLIC_KEY_IMG} >
 
         <button
           className='btn btn-0'
@@ -93,12 +95,16 @@ const Blogdetails = ({ params }) => {
             height: '620px',
             overflow: 'hidden',
           }}>
-            <img
+            <Image
               alt="#"
+              height={0}
+              width={0}
+              sizes="100vw"
               src={blog.imagen}
-              width={'100%'}
               style={{
                 backgroundPosition: 'center',
+                height: 'auto',
+                width: '100%',
               }}
             />
 
@@ -168,9 +174,9 @@ const Blogdetails = ({ params }) => {
 
                       {/* TEXTO */}
                       <div className="sailec col-lg-10 col-12" style={{ marginLeft: '0px' }}>
-                        <div className={matches ? "blog-content" : "blog-content-sm"} dangerouslySetInnerHTML={blog && { __html: blog.texto }}>
                           {/* {blog.texto} */}
-                        </div>
+                          <ParserImgToImage classType={matches ? "blog-content" : "blog-content-sm"} htmlContent={blog.texto} />
+                        {/* </div> */}
                       </div>
 
                       {blog && blog?.video ? <div className="col-lg-12 col-12 d-flex flex-wrap" style={{ marginLeft: '0px', marginTop: matches ? '3rem' : 0, border: '1px solid red' }}>
