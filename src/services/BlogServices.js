@@ -1,35 +1,41 @@
-/* export const fetchBlogs = async () => {
-  const BLOGS_API = 'https://us-central1-mkt-003001-00813.cloudfunctions.net/ZRZ-showBlogList'
+export const fetchBlogs = async () => {
+  const BLOGS_API = 'https://showbloglist-a6dzcva7fcfmfgdu.eastus-01.azurewebsites.net/main'
   try {
     const data = await fetch(BLOGS_API, {
+      method: "POST",
       headers: {
         'content-type': 'application/json',
-        'access-control-allow-origin': '*',
-        'ngrok-skip-browser-warning': 'any'
+        // 'access-control-allow-origin': '*',
+        // 'ngrok-skip-browser-warning': 'any',
+        'body': null,
       }
     })
-    const {blogs} = await data.json()
-    console.log(blogs);
+
+    console.log('LA DATA', data)
+
+    const blogs = await data.json()
+    console.log('BLOGS', blogs);
     return blogs
   } catch (err) {
     console.log(err)
   }
 }
 
+
 export const fetchBlog = async (id) => {
-  const BLOGS_API = 'https://us-central1-mkt-003001-00813.cloudfunctions.net/ZRZ-showBlogByID'
-  
+  const BLOGS_API = 'https://showblogbyid-f4dxh4bvgydmdzh6.eastus-01.azurewebsites.net/main'
+
   const body = {
     id
   }
   try {
     const data = await fetch(BLOGS_API, {
       method: "POST",
-      cors: "no-cors",
+      // cors: "no-cors",
       headers: {
         'content-type': 'application/json',
-        'access-control-allow-origin': '*',
-        'ngrok-skip-browser-warning': 'any'
+        // 'access-control-allow-origin': '*',
+        // 'ngrok-skip-browser-warning': 'any'
       },
       body: JSON.stringify(body)
     })
@@ -39,6 +45,7 @@ export const fetchBlog = async (id) => {
   }
 }
 
+/*
 export const addBlog = async (blog) => {
   const BLOGS_API = process.env.NEXT_PUBLIC_BLOG_API + `/api/blogs`
   const { title, author_name, category, subcategory, status_blog, content, image } = blog;

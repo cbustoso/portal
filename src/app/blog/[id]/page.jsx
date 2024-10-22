@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation';
 // import FeatherIcon from 'feather-icons-react/build/FeatherIcon';
 // import Select from "react-select";
 /* eslint-disable no-unused-vars */
-// import { fetchBlog } from '@/services/BlogServices';
+import { fetchBlog } from '@/services/BlogServices';
 import FooterDae from '@/components/Footer';
 import { blogs } from '@/utils/blogs';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -80,11 +80,12 @@ const Blogdetails = ({ params }) => {
 
   useEffect(() => {
     // const fetchData = async() => {
-    //   const {bloques} = await fetchBlog(params.id);
-    //   setBlog(bloques[0])
+      // const data = await fetchBlog(params.id);
+
+      // setBlog(bloques[0])
     // }
     // fetchData()
-    // setBlog(blogs[params.id])
+    setBlog(blogs[params.id])
   }, [])
 
   return (
