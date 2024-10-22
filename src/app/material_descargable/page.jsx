@@ -8,6 +8,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import FooterDae from "@/components/Footer";
 import SimpleBackdrop from "@/components/Backdrop";
 import { saludMental03 } from "@/components/imagepath";
+import Image from "next/image";
 import Accordion from '@mui/material/Accordion';
 import AccordionActions from '@mui/material/AccordionActions';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -90,21 +91,29 @@ export default function MaterialDescargable() {
   return (
     <>
       {matches && <div style={{
-        height: '520px',
+        height: '620px',
         overflow: 'hidden',
+        position: 'relative'
       }}>
-        <img
-          alt="#"
+        <Image
           src={`${process.env.NEXT_PUBLIC_BASE_IMG}saludMental03.jpeg${process.env.NEXT_PUBLIC_KEY_IMG}`}
-          width={'100%'}
+          alt="Quienes somos cabecera"
+          height={0}
+          width={0}
+          sizes="100vw"
+          fill
+          priority // Carga optimizada para imágenes importantes
           style={{
-            backgroundPosition: 'center'
+            objectFit: 'cover',
+            objectPosition: 'center center',
+            height: '100%',
+            width: '100%',
           }}
         />
       </div>
       }
-      <div className="row flex-column d-flex  sailec">
-        <div className="col-12" style={{ padding: matches ? '0 96px 20px' : '0 32px 20px' }}>
+      <div className="row flex-column d-flex  sailec" style={{ margin: 0, padding: 0 }}>
+        <div className="col-12" style={{ padding: matches ? '0 96px 20px' : '98px 32px 20px' }}>
           <div>
             {matches &&
               <button className='btn mt-4 mb-5'
@@ -121,9 +130,7 @@ export default function MaterialDescargable() {
               </button>
             }
             <div className="card-body flex-row d-flex">
-              <h2
-                className={matches ? 'blog-title' : 'blog-title-sm'}
-                style={{ marginTop: !matches && '50px' }}>
+              <h2 className={matches ? 'blog-title' : 'blog-title-sm'}>
                 Material descargable
               </h2>
             </div>

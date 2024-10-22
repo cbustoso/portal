@@ -1,4 +1,5 @@
 'use client'
+import Image from "next/image";
 import { map } from "@/components/imagepath";
 import { useMediaQuery } from "@mui/material";
 import { Card, CardMedia, Typography } from "@mui/material";
@@ -10,9 +11,14 @@ export default function QuienesSomos() {
   const matches = useMediaQuery('(min-width:600px)');
 
   return (
-    <div className="row prevencion flex-column d-flex " >
-      <div className="col-12" >
-        <div className="card quienes-somos" style={{ padding: matches ? '0px 96px' : '0px 32px', margin: '0px', border: 'none' }}>
+    <div className="row prevencion flex-column d-flex" style={{ padding:0, margin: 0 }}>
+      <div className="col-12" style={{ padding:0, margin: 0 }}>
+        <div className="card quienes-somos"
+          style={{
+            padding: matches ? '0px 96px' : '0px 32px',
+            margin: '0px',
+            border: 'none',
+          }}>
           <div className="card-body" style={{ padding: '0px', margin: '0px' }}>
             <h3 className={matches ? "blog-title" : "blog-title-sm"} style={{ marginTop: !matches && '120px', fontSize: '48px', lineHeight: '60px', fontWeight: 700, textWrap: 'balance' }}>
               Dirección de Salud Mental de Estudiantes
@@ -46,14 +52,18 @@ export default function QuienesSomos() {
                       padding: '0',
                       width: '',
                     }}>
-                    <CardMedia
-                      component="img"
-                      height="240"
-                      image={`${process.env.NEXT_PUBLIC_BASE_IMG}profesional01.jpg${process.env.NEXT_PUBLIC_KEY_IMG}`}
-                      sx={{ borderRadius: '8px' }}
-                    />
+                    <div style={{ position: 'relative', width: '100%', height: '240px' }}>
+                      <Image
+                        src={`${process.env.NEXT_PUBLIC_BASE_IMG}profesional01.jpg${process.env.NEXT_PUBLIC_KEY_IMG}`}
+                        alt="Descripción de la imagen"
+                        // height={240}
+                        // width={0}
+                        fill // Reemplaza layout="fill" en Next.js 14
+                        sizes="(max-height: 240px)" // Ajusta el tamaño de la imagen según el viewport
+                        style={{ objectFit: 'cover', borderRadius: '8px', maxHeight: '240px' }} // Similar a cómo se usa en CardMedia
+                      />
+                    </div>
                   </Card>
-
                   <Card
                     className='col-12 col-lg-8'
                     sx={{
@@ -92,7 +102,6 @@ export default function QuienesSomos() {
                     </Typography>
                   </Card>
                 </div>
-
                 :
                 <div
                   className={`container col-12 ${matches ? 'd-flex' : ''} justify-content-center`}
@@ -118,18 +127,12 @@ export default function QuienesSomos() {
                     <p style={{ textWrap: 'balance' }}>
                       Nuestro modelo de intervención se basa en la <strong>Promoción, Prevención, Atención Grupal y Atención Clínica Individual</strong>; con la finalidad de prestar apoyo para enfrentar las diversas problemáticas psicosociales que se presentan en el transcurso de la vida estudiantil.
                     </p>
-
-
                   </div>
                 </div>
             }
           </div>
-
-          {/* <div className="row" style={{ margin: '0 10px' }} >
-          </div> */}
-
           <div className="row" style={{ margin: matches ? '0' : 0 }} >
-            <div className="card-body flex-column d-flex my-3 " style={{ padding:  0 }} >
+            <div className="card-body flex-column d-flex my-3 " style={{ padding: 0 }} >
               {
                 matches
                   ?
@@ -159,12 +162,10 @@ export default function QuienesSomos() {
               <Elevation matches={matches} />
             </div>
             <div className="card-body flex-column d-flex align-items-center my-2 ">
-
               <ReserveBtn text={'Reservar'} bgColor={'#FABB00'} color={'#000'} />
             </div>
 
-            <div className="card-body flex-column d-flex align-items-center">
-
+            <div className="card-body flex-column d-flex align-items-center px-0">
               <h2 className="sailec" style={{ fontWeight: 700, fontSize: '32px', lineHeight: '40px', marginTop: matches ? '20px' : '20px' }}>¿Tienes preguntas o sugerencias?</h2>
               <p style={{
                 margin: matches ? '0 25px' : 0,
@@ -183,14 +184,14 @@ export default function QuienesSomos() {
 
             </div>
           </div>
-          <div className="row" style={{ margin: '0 10px' }} >
-            <div className="card-body flex-column d-flex align-items-center">
+          <div className="row" style={{ margin: '0 ' }} >
+            <div className="card-body flex-column d-flex align-items-center px-0">
               {
                 matches
                   ? <h2 style={{ fontWeight: 700, fontSize: '32px', lineHeight: '40px', marginTop: '20px' }} className="sailec">¿Dónde se encuentra el <strong>DSME?</strong></h2>
                   : <>
                     <h2 style={{ fontWeight: 700, fontSize: '32px', lineHeight: '40px' }} className="sailec">¿Dónde se encuentra el <strong>DSME?</strong></h2>
-                  
+
                   </>
               }
               <div className="col-12 col-lg-6 d-flex justify-content-center mb-3">

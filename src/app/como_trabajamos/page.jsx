@@ -117,7 +117,7 @@ const IntervencionesClinicas = () => {
       <div className="card quienes-somos" style={{ padding: matches ? '0px 96px' : '20px 32px 0px', margin: '0px', border: 'none', background: '#ffffff' }}>
         <Section
           title={'Intervenciones grupales'}
-          image={'https://github.com/Niennis/imagesudp/blob/main/profesional01.jpg?raw=true'}
+          image={'https://github.com/Niennis/imagesudp/blob/main/promocion_prevencion_cabecera.jpg?raw=true'}
           left={true}
           bgColor={'#ffffff'}
         >

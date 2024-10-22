@@ -1,4 +1,5 @@
 'use client'
+import Image from "next/image";
 import Link from "next/link";
 import { carrousel01 } from "@/components/imagepath";
 import { useMediaQuery } from "@mui/material";
@@ -19,12 +20,25 @@ export default function QuienesSomosLayout({ children }) {
   return (
     <>
       {matches && <div style={{
-        height: '520px',
+        height: '620px',
         overflow: 'hidden',
-        backgroundImage: `url(https://github.com/Niennis/imagesudp/blob/main/intervenciones_clinicas_cabecera.jpg?raw=true)`,
-        backgroundPosition: 'center 30%',
-        backgroundSize: 'cover'
+        position: 'relative'
       }}>
+        <Image
+          src={`https://github.com/Niennis/imagesudp/blob/main/intervenciones_clinicas_cabecera.jpg?raw=true`}
+          alt="Quienes somos cabecera"
+          height={0}
+          width={0}
+          sizes="100vw"
+          fill
+          priority // Carga optimizada para imágenes importantes
+          style={{
+            objectFit: 'cover',
+            objectPosition: 'center 30%',
+            height: '100%',
+            width: '100%',
+          }}
+        />
       </div>
       }
 

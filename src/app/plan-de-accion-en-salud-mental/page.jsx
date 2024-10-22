@@ -1,6 +1,7 @@
 'use client'
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { useMediaQuery } from "@mui/material";
 
@@ -20,7 +21,7 @@ const ProtocoloAccionSaludMental = () => {
             <h3 className={matches ? "blog-title" : "blog-title-sm"} style={{ marginLeft: '0px', fontSize: '48px', lineHeight: '60px', fontWeight: 700, textWrap: 'balance' }}>
               Plan de acción en salud mental
             </h3>
-       
+
             <div className="tab-content tab-dsme-content">
               <div className={`tab-pane ${activeTab === 'protocolo-de-accion-en-salud-mental' ? 'show active' : ''}`} id="protocolo-de-accion-en-salud-mental">
                 <div className="blog-content">
@@ -33,7 +34,21 @@ const ProtocoloAccionSaludMental = () => {
                   <Link href="/downloads/Plan_de_Salud_Mental_Universitaria_versión_informe.pdf" style={{ marginLeft: '0px', fontSize: '24px', lineHeight: '60px', fontWeight: 700, textWrap: 'balance' }}>
                     <FaArrowRightLong /> Ver protocolo aquí
                   </Link>
-                  <img src={`${process.env.NEXT_PUBLIC_BASE_IMG}plan_accion_texto.jpg${process.env.NEXT_PUBLIC_KEY_IMG}`} alt="" width="100%" className="blog-img"/>
+                  <Image
+                    src={`${process.env.NEXT_PUBLIC_BASE_IMG}plan_accion_texto.jpg${process.env.NEXT_PUBLIC_KEY_IMG}`}
+                    alt="plan de acción imagen"
+                    height={0}
+                    width={0}
+                    sizes="100vw"
+                    className="blog-img"
+                    priority // Carga optimizada para imágenes importantes
+                    style={{
+                      objectFit: 'cover',
+                      objectPosition: 'center bottom',
+                      height: '100%',
+                      width: '100%',
+                    }}
+                  />
                 </div>
               </div>
             </div>

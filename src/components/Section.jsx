@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { CircleRounded } from "@mui/icons-material";
 import { Grid, Box, Card } from "@mui/material";
 // import TestCard from './Card'
@@ -54,13 +55,24 @@ const Section = ({ title, image, left, children, bgColor }) => {
                         paddingRight: '1em',
                         bgcolor: bgColor
                       }}>
-                      <CardMedia
+                      {/* <CardMedia
                         component="img"
                         height="300"
                         width="300"
                         image={image}
                         sx={{ borderRadius: '8px' }}
-                      />
+                      /> */}
+                      <div style={{ position: 'relative', width: '100%', height: '240px' }}>
+                        <Image
+                          src={image}
+                          alt="Descripción de la imagen"
+                          // height={240}
+                          // width={0}
+                          fill // Reemplaza layout="fill" en Next.js 14
+                          sizes="(max-height: 240px)" // Ajusta el tamaño de la imagen según el viewport
+                          style={{ objectFit: 'cover', borderRadius: '8px', maxHeight: '240px' }} // Similar a cómo se usa en CardMedia
+                        />
+                      </div>
                     </Card>
                   }
 
@@ -110,13 +122,24 @@ const Section = ({ title, image, left, children, bgColor }) => {
                         paddingLeft: '1em',
                         bgcolor: bgColor
                       }}>
-                      <CardMedia
+                      {/* <CardMedia
                         component="img"
                         height="240"
                         width="240"
                         image={image}
                         sx={{ borderRadius: '8px' }}
-                      />
+                      /> */}
+                       <div style={{ position: 'relative', width: '100%', height: '240px' }}>
+                        <Image
+                          src={image}
+                          alt="Descripción de la imagen"
+                          // height={240}
+                          // width={0}
+                          fill // Reemplaza layout="fill" en Next.js 14
+                          sizes="(max-height: 240px)" // Ajusta el tamaño de la imagen según el viewport
+                          style={{ objectFit: 'cover', borderRadius: '8px', maxHeight: '240px' }} // Similar a cómo se usa en CardMedia
+                        />
+                      </div>
                     </Card>
                   }
                 </div>
@@ -133,7 +156,7 @@ const Section = ({ title, image, left, children, bgColor }) => {
                 >
                   <Card sx={{
                     maxWidth: 'fit-content',
-                    bgcolor: bgColor, 
+                    bgcolor: bgColor,
                     boxShadow: 'unset'
                   }}>
                     <CardMedia

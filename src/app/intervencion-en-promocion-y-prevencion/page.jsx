@@ -1,6 +1,7 @@
 'use client'
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useMediaQuery } from "@mui/material";
 
 const PromocionYPrevencion = () => {
@@ -29,7 +30,21 @@ const PromocionYPrevencion = () => {
                 </div>
               </div>
 
-              <img src={`${process.env.NEXT_PUBLIC_BASE_IMG}promocion_prevencion_texto.jpg${process.env.NEXT_PUBLIC_KEY_IMG}`} alt="" width="100%" className="blog-img" />
+              <Image
+                    src={`${process.env.NEXT_PUBLIC_BASE_IMG}promocion_prevencion_texto.jpg${process.env.NEXT_PUBLIC_KEY_IMG}`}
+                    alt="plan de acción imagen"
+                    height={0}
+                    width={0}
+                    sizes="100vw"
+                    className="blog-img"
+                    priority // Carga optimizada para imágenes importantes
+                    style={{
+                      objectFit: 'cover',
+                      objectPosition: 'center bottom',
+                      height: '100%',
+                      width: '100%',
+                    }}
+                  />
             </div>
           </div>
         </div>

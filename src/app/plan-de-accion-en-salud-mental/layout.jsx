@@ -1,5 +1,6 @@
 'use client'
 import Link from "next/link";
+import Image from "next/image";
 import { carrousel01 } from "@/components/imagepath";
 import { useMediaQuery } from "@mui/material";
 import FooterDae from "@/components/Footer";
@@ -19,13 +20,26 @@ export default function QuienesSomosLayout({ children }) {
   return (
     <>
       {matches && <div style={{
-        height: '520px',
+        height: '620px',
         overflow: 'hidden',
-        backgroundImage: `url(https://github.com/Niennis/imagesudp/blob/main/plan_accion_cabecera.jpg?raw=true)`,
-        backgroundPosition: 'center 10%',
-        backgroundSize: 'cover'
+        position: 'relative'
       }}>
-      </div>
+        <Image
+          src='https://github.com/Niennis/imagesudp/blob/main/plan_accion_cabecera.jpg?raw=true'
+          alt="Quienes somos cabecera"
+          height={0}
+          width={0}
+          sizes="100vw"
+          fill
+          priority // Carga optimizada para imágenes importantes
+          style={{
+            objectFit: 'cover',
+            objectPosition: 'center 10%',
+            height: '100%',
+            width: '100%',
+          }}
+        />
+      </div >
       }
 
       <div className="row flex-column d-flex align-items-center sailec mt--md-5 section-quienes-somos" /* style={{padding:0, margin: 0}} */>
@@ -48,7 +62,7 @@ export default function QuienesSomosLayout({ children }) {
                 </button>
               </>
             }
-           
+
             {children}
           </div>
         </div>
